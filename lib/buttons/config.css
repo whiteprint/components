@@ -1,0 +1,6 @@
+:root {
+
+}
+
+@custom-selector :--button
+  .button;

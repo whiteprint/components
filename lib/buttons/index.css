@@ -1,0 +1,5 @@
+@import "mixins";
+
+:--button {
+  @mixin button;
+}

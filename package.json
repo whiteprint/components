@@ -1,0 +1,22 @@
+{
+  "name": "@whiteprint/components",
+  "version": "1.0.0",
+  "description": "Front-end framework",
+  "author": "Sam Smith",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-inject-multiple-files": "^2.0.5",
+    "gulp-postcss": "^8.0.0",
+    "rollup": "^1.2.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-stream": "^1.24.1"
+  },
+  "dependencies": {
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.1",
+    "postcss-preset-env": "^6.5.0"
+  }
+}
