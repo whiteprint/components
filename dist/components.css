@@ -1,29 +1,109 @@
-:root {
-
-}
-
 .button {
-  display: flex;
-  width: 100%;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  line-height: 1.25;
-  padding: 0.5em 1em;
-  transition: all .2s ease-in-out;
+  padding-left: 1em;
+  padding-right: 1em;
+  min-height: 2.8rem;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+  font-size: 1.1em;
+  font-weight: 600;
+  user-select: none;
   box-sizing: border-box;
   text-decoration: none;
+  outline: none;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 0;
+  position: relative
 }
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px
+  }
+
+.button:hover {
+    cursor: pointer;
+  }
 
 .button:hover,
   .button:focus {
     text-decoration: none;
   }
 
-.button:focus {
-    outline: 0;
+.button:focus,
+  .button:focus-within {
+    outline-width: 4px;
+  }
+
+.button {
+  background-color: #282828;
+  color: #fff;
+  border-color: #282828
+}
+
+.button:focus::before, .button:focus-within::before {
+      box-shadow: 0 0 0 4px rgb(40, 40, 40);
+    }
+
+.button:active {
+    background-color: #fff;
+    color: #282828;
+  }
+
+@media (max-width: 600px) {
+
+.button {
+    display: flex;
+    width: 100%
+}
+  }
+
+.button[data-action="primary"] {
+    background-color: #0071EB;
+    color: #fff;
+    border-color: #0071EB;
+  }
+
+.button[data-action="primary"]:focus::before, .button[data-action="primary"]:focus-within::before {
+      box-shadow: 0 0 0 4px rgb(0, 113, 235);
+    }
+
+.button[data-action="primary"]:active {
+    background-color: #fff;
+    color: #0071EB;
+  }
+
+.button-group {
+  display: flex;
+}
+
+.button-group :nth-child(n+2) {
+    margin: 0 0 0 2px
+  }
+
+.button-group :not(:last-child) {
+  }
+
+@media (max-width: 600px) {
+
+.button-group {
+    flex-direction: column;
+}
+
+    .button-group :nth-child(n+2) {
+      margin: 2px 0 0 0;
+    }
+
+    .button-group :first-child {
+    }
+
+    .button-group :last-child {
+    }
   }

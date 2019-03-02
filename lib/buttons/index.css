@@ -2,4 +2,12 @@
 
 :--button {
   @mixin button;
+
+  :--button-primary {
+    @mixin buttonPrimary;
+  }
+}
+
+:--button-group {
+  @mixin buttonGroup;
 }

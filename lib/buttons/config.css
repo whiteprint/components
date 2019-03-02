@@ -1,6 +1,30 @@
-:root {
+@import "../variables.css";
 
+:root {
+  --button-outline-width: var(--component-focus-outline-width);
+  --button-outline-offset: var(--component-focus-outline-offset);
+  --button-bg-color: var(--component-main-color);
+  --button-txt-color: var(--component-background-color);
+  --button-primary-bg-color: var(--component-emphasis-primary);
+  --button-primary-txt-color: var(--button-txt-color);
+  --button-height: var(--component-input-height);
+  --button-font-size: 1.1em;
+  --button-font-weight: 600;
+  --button-font-family: var(--component-font-family);
+  --button-border-width: var(--component-border-width);
+  --button-border-radius: var(--component-border-radius);
+  --button-focus-outline-opacity: var(--component-focus-outline-opacity);
+  --button-focus-outline-blur: var(--component-focus-outline-blur);
+  --button-group-gap: var(--button-outline-offset);
 }
 
 @custom-selector :--button
   .button;
+
+@custom-selector :--button-primary
+  &[data-action="primary"];
+
+@custom-selector :--button-group
+  .button-group;
+
+@custom-media --button-block (max-width: 600px);

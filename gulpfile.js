@@ -38,6 +38,20 @@ gulp.task('components:js', () => {
   });
 });
 
+gulp.task('buttons:js', () => {
+  return rollup.rollup({
+    input: './src/buttons.js',
+    plugins: [
+			commonjs()
+    ]
+  }).then(bundle => {
+    return bundle.write({
+      file: './lib/buttons/buttons.js',
+      format: 'es'
+    });
+  });
+});
+
 gulp.task('dropdowns:js', () => {
   return rollup.rollup({
     input: './src/dropdowns.js',

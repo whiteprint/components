@@ -2,11 +2,13 @@ module.exports = {
   plugins: {
     'postcss-import': {},
     'postcss-mixins': {},
-    'postcss-preset-env': {
-      features: {
-        'nesting-rules': true,
-        'custom-selectors': true
-      }
-    }
+    'postcss-custom-media': {},
+    'postcss-custom-selectors': {exportTo: 'selectors.js'},
+    'postcss-custom-properties': {preserve: false},
+    'postcss-strip-units': {},
+    'postcss-advanced-variables': {disable: '@mixin, @include, @content, @import'},
+    'postcss-color-function': {},
+    'postcss-calc': {},
+    'postcss-nesting': {}
   }
 }

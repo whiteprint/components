@@ -15,8 +15,15 @@
     "rollup-stream": "^1.24.1"
   },
   "dependencies": {
+    "postcss-advanced-variables": "^3.0.0",
+    "postcss-calc": "^7.0.1",
+    "postcss-color-function": "^4.0.1",
+    "postcss-custom-media": "^7.0.7",
+    "postcss-custom-properties": "^8.0.9",
+    "postcss-custom-selectors": "^5.1.2",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.1",
-    "postcss-preset-env": "^6.5.0"
+    "postcss-nesting": "^7.0.0",
+    "postcss-strip-units": "^2.0.1"
   }
 }

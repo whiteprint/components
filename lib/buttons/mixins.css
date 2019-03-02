@@ -1,32 +1,138 @@
-@define-mixin inlineButtonModifier {
-  display: inline-flex;
-  width: auto;
+$btnRad: strip(var(--button-border-radius));
+
+@define-mixin blockButtonMod {
+  display: flex;
+  width: 100%;
 }
 
-@define-mixin buttonColour {
+@define-mixin buttonActive $col, $txt-col {
+  background-color: $col;
+  color: $txt-col;
+}
 
+@define-mixin buttonCol $col, $txt-col {
+  background-color: $col;
+  color: $txt-col;
+  border-color: $col;
+
+  &:focus,
+  &:focus-within {
+    &::before {
+      box-shadow: 0 0 var(--button-focus-outline-blur) var(--button-outline-width) color($col a(var(--button-focus-outline-opacity)));
+    }
+  }
+
+  &:active {
+    @mixin buttonActive $txt-col, $col;
+  }
 }
 
 
 @define-mixin button {
-  display: flex;
-  width: 100%;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
+  padding-left: 1em;
+  padding-right: 1em;
+  min-height: var(--button-height);
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   user-select: none;
-  line-height: 1.25;
-  padding: 0.5em 1em;
-  transition: all .2s ease-in-out;
   box-sizing: border-box;
   text-decoration: none;
+  outline: none;
+  border-style: solid;
+  border-width: var(--button-border-width);
+  border-radius: var(--button-border-radius);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(0 - var(--button-border-width) - var(--button-outline-offset));
+    right: calc(0 - var(--button-border-width) - var(--button-outline-offset));
+    bottom: calc(0 - var(--button-border-width) - var(--button-outline-offset));
+    left: calc(0 - var(--button-border-width) - var(--button-outline-offset));
+    @if $btnRad > 0 {
+      border-radius: calc(var(--button-border-radius) + var(--button-outline-offset));
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &:hover,
   &:focus {
     text-decoration: none;
   }
 
-  &:focus {
-    outline: 0;
+  &:focus,
+  &:focus-within {
+    outline-width: var(--button-outline-width);
+  }
+
+  @mixin buttonCol var(--button-bg-color), var(--button-txt-color);
+
+  @media (--button-block) {
+    @mixin blockButtonMod;
+  }
+}
+
+@define-mixin buttonPrimary {
+  @mixin buttonCol var(--button-primary-bg-color), var(--button-primary-txt-color);
+}
+
+@define-mixin buttonGroup {
+  display: flex;
+
+  & :nth-child(n+2) {
+    margin: 0 0 0 var(--button-group-gap);
+
+    @if $btnRad > 0 {
+      &,
+      &::before {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  & :not(:last-child) {
+    @if $btnRad > 0 {
+      &,
+      &::before {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  @media (--button-block) {
+    flex-direction: column;
+
+    & :nth-child(n+2) {
+      margin: var(--button-group-gap) 0 0 0;
+    }
+
+    & :first-child {
+      @if $btnRad > 0 {
+        &,
+        &::before {
+          border-radius: var(--button-border-radius) var(--button-border-radius) 0 0;
+        }
+      }
+    }
+
+    & :last-child {
+      @if $btnRad > 0 {
+        &,
+        &::before {
+          border-radius: 0 0 var(--button-border-radius) var(--button-border-radius);
+        }
+      }
+    }
   }
 }
