@@ -22,7 +22,8 @@ $btnRad: strip(var(--button-border-radius));
     }
   }
 
-  &:active {
+  &:active,
+  &[aria-selected="true"] {
     @mixin buttonActive $txt-col, $col;
   }
 }
@@ -78,6 +79,11 @@ $btnRad: strip(var(--button-border-radius));
 
   @media (--button-block) {
     @mixin blockButtonMod;
+  }
+
+  & input[type="radio"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
   }
 }
 

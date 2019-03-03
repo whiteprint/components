@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const rollup = require('rollup');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const cleanup  = require('rollup-plugin-cleanup');
 const postcss = require('gulp-postcss');
 const injectfiles = require('gulp-inject-multiple-files');
 const browserSync = require('browser-sync').create();
@@ -42,7 +43,8 @@ gulp.task('buttons:js', () => {
   return rollup.rollup({
     input: './src/buttons.js',
     plugins: [
-			commonjs()
+      commonjs(),
+      cleanup()
     ]
   }).then(bundle => {
     return bundle.write({

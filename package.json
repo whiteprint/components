@@ -10,6 +10,7 @@
     "gulp-inject-multiple-files": "^2.0.5",
     "gulp-postcss": "^8.0.0",
     "rollup": "^1.2.2",
+    "rollup-plugin-cleanup": "^3.1.1",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-stream": "^1.24.1"

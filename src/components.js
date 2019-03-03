@@ -1,4 +1,4 @@
-import buttons from './buttons.js';
+import radioButtons from './buttons.js';
 import dropdowns from './dropdowns.js';
-buttons();
+radioButtons();
 dropdowns();
