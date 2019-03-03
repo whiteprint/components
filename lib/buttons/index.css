@@ -3,7 +3,7 @@
 :--button {
   @mixin button;
 
-  :--button-primary {
+  &:--button-primary-modifier {
     @mixin buttonPrimary;
   }
 }

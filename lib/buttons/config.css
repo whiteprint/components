@@ -21,8 +21,11 @@
 @custom-selector :--button
   .button;
 
-@custom-selector :--button-primary
-  &[data-action="primary"];
+@custom-selector :--button-primary-modifier
+  [data-action="primary"];
+
+@custom-selector :--button-active-modifier
+  [aria-pressed="true"];
 
 @custom-selector :--button-group
   .button-group;
