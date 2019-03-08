@@ -83,7 +83,8 @@ $btnRad: strip(var(--button-border-radius));
   }
 
   @nest .js & {
-    & input[type="radio"] {
+    & input[type="radio"],
+    & input[type="checkbox"] {
       position: absolute;
       clip: rect(0,0,0,0);
     }

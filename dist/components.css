@@ -67,7 +67,8 @@
 }
   }
 
-.js .button input[type="radio"] {
+.js .button input[type="radio"],
+    .js .button input[type="checkbox"] {
       position: absolute;
       clip: rect(0,0,0,0);
     }

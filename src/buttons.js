@@ -1,9 +1,12 @@
-// toggle state of buttons that contain radio inputs
-export default function radioButtons() {
+// compile-time vars
+//#set _BTNSEL = _SEL[":--button"]
+//#set _RADINPT = 'input[type="radio"]'
+//#set _CHKINPT = 'input[type="checkbox"]'
 
-  // compile-time vars
-  //#set _RADINPT = 'input[type="radio"]'
-  //#set _BTNSEL = _SEL[":--button"]
+
+// toggle state of buttons that contain radio inputs
+export function radioButtons() {
+
   // run-time vars
   var buttonRadios = document.querySelectorAll('$_BTNSEL $_RADINPT');
 
@@ -24,5 +27,29 @@ export default function radioButtons() {
       return false;
     });
   }
+}
 
-};
+// toggle state of buttons that contain checkbox inputs
+export function checkboxButtons() {
+
+  // run-time vars
+  var buttonCheckboxes = document.querySelectorAll('$_BTNSEL $_CHKINPT');
+
+  // for all checkbox inputs inside buttons
+  for (var i = 0; i < buttonCheckboxes.length; i++) {
+    // listen for click on parent (button)
+    buttonCheckboxes[i].parentNode.addEventListener('click', function() {
+      // checkbox status
+      var checked = this.querySelector('$_CHKINPT').checked;
+      // if checked
+      if (checked) {
+        // set to true
+        this.setAttribute("aria-pressed", "true");
+      } else {
+        // set to false
+        this.setAttribute("aria-pressed", "false");
+      }
+      return false;
+    });
+  }
+}
