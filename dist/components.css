@@ -6,7 +6,7 @@
   padding-left: 1em;
   padding-right: 1em;
   min-height: 2.8rem;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+  font-family: inherit;
   font-size: 1.1em;
   font-weight: 600;
   user-select: none;
