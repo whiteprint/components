@@ -23,7 +23,7 @@ $btnRad: strip(var(--button-border-radius));
   }
 
   &:active,
-  &[aria-selected="true"],
+  &[aria-checked="true"],
   &:--button-active-modifier {
     @mixin buttonActive $txt-col, $col;
   }
