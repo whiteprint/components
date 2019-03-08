@@ -67,10 +67,10 @@
 }
   }
 
-.button input[type="radio"] {
-    position: absolute;
-    clip: rect(0,0,0,0);
-  }
+.js .button input[type="radio"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+    }
 
 .button[data-action="primary"] {
     background-color: #0071EB;

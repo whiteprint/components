@@ -82,9 +82,11 @@ $btnRad: strip(var(--button-border-radius));
     @mixin blockButtonMod;
   }
 
-  & input[type="radio"] {
-    position: absolute;
-    clip: rect(0,0,0,0);
+  @nest .js & {
+    & input[type="radio"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+    }
   }
 }
 
