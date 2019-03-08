@@ -57,7 +57,7 @@ gulp.task('buttons:js', () => {
     ]
   }).then(bundle => {
     return bundle.write({
-      file: './lib/buttons/buttons.js',
+      file: './lib/buttons/index.js',
       format: 'es'
     });
   });
@@ -68,7 +68,7 @@ gulp.task('dropdowns:js', () => {
     input: './src/dropdowns.js',
   }).then(bundle => {
     return bundle.write({
-      file: './lib/dropdowns/dropdowns.js',
+      file: './lib/dropdowns/index.js',
       format: 'es'
     });
   });
