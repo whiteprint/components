@@ -1,21 +1,21 @@
 @import "../variables.css";
 
 :root {
-  --button-outline-width: var(--component-focus-outline-width);
-  --button-outline-offset: var(--component-focus-outline-offset);
+  --button-height: var(--component-input-height);
+  --button-font-size: 1.1em;
+  --button-font-weight: var(--component-font-weight-bold);
+  --button-font-family: var(--component-font-family);
+  --button-border-width: var(--component-border-width);
+  --button-border-radius: var(--component-border-radius);
+  --button-focus-outline-width: var(--component-focus-outline-width);
+  --button-focus-outline-offset: var(--component-focus-outline-offset);
+  --button-focus-outline-opacity: var(--component-focus-outline-opacity);
+  --button-focus-outline-blur: var(--component-focus-outline-blur);
+  --button-group-gap: var(--button-focus-outline-offset);
   --button-bg-color: var(--component-main-color);
   --button-txt-color: var(--component-background-color);
   --button-primary-bg-color: var(--component-emphasis-primary);
   --button-primary-txt-color: var(--button-txt-color);
-  --button-height: var(--component-input-height);
-  --button-font-size: 1.1em;
-  --button-font-weight: 600;
-  --button-font-family: var(--component-font-family);
-  --button-border-width: var(--component-border-width);
-  --button-border-radius: var(--component-border-radius);
-  --button-focus-outline-opacity: var(--component-focus-outline-opacity);
-  --button-focus-outline-blur: var(--component-focus-outline-blur);
-  --button-group-gap: var(--button-outline-offset);
 }
 
 @custom-selector :--button

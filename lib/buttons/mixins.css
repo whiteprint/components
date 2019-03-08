@@ -18,7 +18,7 @@ $btnRad: strip(var(--button-border-radius));
   &:focus,
   &:focus-within {
     &::before {
-      box-shadow: 0 0 var(--button-focus-outline-blur) var(--button-outline-width) color($col a(var(--button-focus-outline-opacity)));
+      box-shadow: 0 0 var(--button-focus-outline-blur) var(--button-focus-outline-width) color($col a(var(--button-focus-outline-opacity)));
     }
   }
 
@@ -53,12 +53,12 @@ $btnRad: strip(var(--button-border-radius));
   &::before {
     content: '';
     position: absolute;
-    top: calc(0 - var(--button-border-width) - var(--button-outline-offset));
-    right: calc(0 - var(--button-border-width) - var(--button-outline-offset));
-    bottom: calc(0 - var(--button-border-width) - var(--button-outline-offset));
-    left: calc(0 - var(--button-border-width) - var(--button-outline-offset));
+    top: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
+    right: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
+    bottom: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
+    left: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
     @if $btnRad > 0 {
-      border-radius: calc(var(--button-border-radius) + var(--button-outline-offset));
+      border-radius: calc(var(--button-border-radius) + var(--button-focus-outline-offset));
     }
   }
 
@@ -73,7 +73,7 @@ $btnRad: strip(var(--button-border-radius));
 
   &:focus,
   &:focus-within {
-    outline-width: var(--button-outline-width);
+    outline-width: var(--button-focus-outline-width);
   }
 
   @mixin buttonCol var(--button-bg-color), var(--button-txt-color);
