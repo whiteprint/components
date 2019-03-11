@@ -104,12 +104,17 @@ gulp.task('watch:html', function() {
   gulp.series('html'));
 });
 
+gulp.task('watch:js', function() {
+  return gulp.watch(['./src/*.js', './selectors.js'],
+  gulp.series('components:js'));
+});
+
 gulp.task('watch:dist', function() {
   return gulp.watch('./dist/**/*',
   gulp.series('reload'));
 });
 
-gulp.task('watch', gulp.parallel('watch:css', 'watch:html', 'watch:dist'));
+gulp.task('watch', gulp.parallel('watch:css', 'watch:html', 'watch:js', 'watch:dist'));
 
 // deafult task
 gulp.task('default', gulp.parallel('watch', 'server'));
