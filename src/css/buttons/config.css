@@ -30,4 +30,7 @@
 @custom-selector :--button-group
   .button-group;
 
+/* @custom-selector :--button-block-modifier
+  @nest aside &; */
+
 @custom-media --button-block (max-width: 600px);

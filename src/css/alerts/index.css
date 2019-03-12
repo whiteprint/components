@@ -1,0 +1,13 @@
+@import "mixins";
+
+:--alert {
+  @mixin alert;
+}
+
+:--alert-icon {
+  @mixin alertIcon;
+}
+
+:--alert-body {
+  @mixin alertBody;
+}

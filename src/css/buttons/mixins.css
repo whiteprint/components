@@ -1,0 +1,148 @@
+$btnRad: strip(var(--button-border-radius));
+
+@define-mixin blockButtonMod {
+  display: flex;
+  width: 100%;
+}
+
+@define-mixin buttonActive $col, $txt-col {
+  background-color: $col;
+  color: $txt-col;
+}
+
+@define-mixin buttonCol $col, $txt-col {
+  background-color: $col;
+  color: $txt-col;
+  border-color: $col;
+
+  &:focus,
+  &:focus-within {
+    &::before {
+      box-shadow: 0 0 var(--button-focus-outline-blur) var(--button-focus-outline-width) color($col a(var(--button-focus-outline-opacity)));
+    }
+  }
+
+  &:active,
+  &[aria-checked="true"],
+  &:--button-active-modifier {
+    @mixin buttonActive $txt-col, $col;
+  }
+}
+
+
+@define-mixin button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  padding-left: 1em;
+  padding-right: 1em;
+  min-height: var(--button-height);
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  user-select: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border-style: solid;
+  border-width: var(--button-border-width);
+  border-radius: var(--button-border-radius);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
+    right: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
+    bottom: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
+    left: calc(0 - var(--button-border-width) - var(--button-focus-outline-offset));
+    @if $btnRad > 0 {
+      border-radius: calc(var(--button-border-radius) + var(--button-focus-outline-offset));
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:focus-within {
+    outline-width: var(--button-focus-outline-width);
+  }
+
+  @mixin buttonCol var(--button-bg-color), var(--button-txt-color);
+
+  @media (--button-block) {
+    @mixin blockButtonMod;
+  }
+
+  @nest .js & {
+    & input[type="radio"],
+    & input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0,0,0,0);
+    }
+  }
+}
+
+@define-mixin buttonPrimary {
+  @mixin buttonCol var(--button-primary-bg-color), var(--button-primary-txt-color);
+}
+
+@define-mixin buttonGroup {
+  display: flex;
+
+  & :nth-child(n+2) {
+    margin: 0 0 0 var(--button-group-gap);
+
+    @if $btnRad > 0 {
+      &,
+      &::before {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  & :not(:last-child) {
+    @if $btnRad > 0 {
+      &,
+      &::before {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  @media (--button-block) {
+    flex-direction: column;
+
+    & :nth-child(n+2) {
+      margin: var(--button-group-gap) 0 0 0;
+    }
+
+    & :first-child {
+      @if $btnRad > 0 {
+        &,
+        &::before {
+          border-radius: var(--button-border-radius) var(--button-border-radius) 0 0;
+        }
+      }
+    }
+
+    & :last-child {
+      @if $btnRad > 0 {
+        &,
+        &::before {
+          border-radius: 0 0 var(--button-border-radius) var(--button-border-radius);
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,8 @@ const commonjs = require('rollup-plugin-commonjs');
 const cleanup  = require('rollup-plugin-cleanup');
 const jscc = require('rollup-plugin-jscc');
 const postcss = require('gulp-postcss');
-const injectfiles = require('gulp-inject-multiple-files');
+const preprocess = require("gulp-preprocess");
+const stripComments = require('gulp-strip-comments');
 const browserSync = require('browser-sync').create();
 const selectors = require('./selectors.js');
 
@@ -13,13 +14,23 @@ const selectors = require('./selectors.js');
 // process HTML
 gulp.task('html', function(done) {
   gulp.src('./src/index.html')
-    .pipe(injectfiles('./src/index.html','./src/html'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(preprocess())
+    .pipe(gulp.dest("./dist/"));
+    done();
+});
+
+// clean up CSS
+gulp.task('css', function(done) {
+  gulp.src('./src/css/**/*')
+    .pipe(stripComments.text({
+      trim: true
+    }))
+    .pipe(gulp.dest("./lib/"));
     done();
 });
 
 // process CSS
-gulp.task('css', function () {
+gulp.task('postcss', function () {
   return gulp.src('./src/components.css')
     .pipe(postcss())
     .pipe(gulp.dest('./dist'));
@@ -95,8 +106,13 @@ gulp.task('reload', function(done) {
 
 // watching
 gulp.task('watch:css', function() {
-  return gulp.watch(['./lib/**/*.css', './src/components.css'],
+  return gulp.watch(['./src/css/**/*.css'],
   gulp.series('css'));
+});
+
+gulp.task('watch:postcss', function() {
+  return gulp.watch(['./lib/**/*.css', './src/components.css'],
+  gulp.series('postcss'));
 });
 
 gulp.task('watch:html', function() {
@@ -114,7 +130,7 @@ gulp.task('watch:dist', function() {
   gulp.series('reload'));
 });
 
-gulp.task('watch', gulp.parallel('watch:css', 'watch:html', 'watch:js', 'watch:dist'));
+gulp.task('watch', gulp.parallel('watch:css', 'watch:postcss', 'watch:html', 'watch:js', 'watch:dist'));
 
 // deafult task
 gulp.task('default', gulp.parallel('watch', 'server'));

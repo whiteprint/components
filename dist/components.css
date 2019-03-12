@@ -1,3 +1,55 @@
+.alert {
+  position: relative;
+  border-style: solid;
+  border-color: #282828 #282828 #282828 red;
+  border-width: 4px 12px 4px 12px;
+  box-sizing: border-box;
+  display: flex;
+  font-weight: 600;
+}
+
+.alert::before,
+  .alert::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+  }
+
+.alert::before {
+    background-color: red;
+    left: -12px;
+    width: 12px;
+  }
+
+.alert::after {
+    background-color: #282828;
+    right: -12px;
+    width: 12px;
+  }
+
+.alert_icon {
+  background-color: red;
+  padding-top: 0.2em;
+}
+
+.alert_icon svg {
+    width: 2.6em;
+    height: 2.6em;
+    fill: #fff;
+  }
+
+.alert_icon:first-child svg {
+        position: relative;
+        left: -6px;
+      }
+
+.alert_body {
+  font-size: 1.1em;
+  padding: 0.8em 1em;
+  flex-grow: 1;
+}
+
 .button {
   display: inline-flex;
   align-items: center;

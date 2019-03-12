@@ -18,45 +18,79 @@
 </head>
 <body>
   <div class="component">
+    <div class="alert" role="alert">
+      <span class="alert_body">This is an alert.</span>
+    </div>
+    
+  </div>
+  <div class="component">
+    <div class="alert" role="alert">
+      <span class="alert_icon">
+        <svg><use xlink:href="#exclamation" /></svg>
+      </span>
+      <span class="alert_body">This is an alert.</span>
+    </div>
+    <br />
+    <div class="alert" role="alert">
+      <span class="alert_body">This is an alert.</span>
+      <span class="alert_icon">
+        <svg><use xlink:href="#exclamation" /></svg>
+      </span>
+    </div>
+    
+  </div>
+  <div class="component">
+    <div class="alert" role="alert">
+      <span class="alert_icon">
+        <svg><use xlink:href="#exclamation" /></svg>
+      </span>
+      <span class="alert_body">This is an alert.<p>
+        foo
+      </p></span>
+    </div>
+    
+  </div>
+  <div class="component">
     <button type="button" class="button">Button</button>
-
+    
   </div>
   <div class="component">
     <button type="button" class="button" data-action="primary">Button</button>
-
-  </div>
-  <div class="component">
-    <button type="button" class="button" aria-pressed="true">Button</button>
-
+    
   </div>
   <div class="component">
     <div class="button-group">
-  <button type="button" class="button">Button</button>
-  <button type="button" class="button">Button</button>
-  <button type="button" class="button">Button</button>
-</div>
-
+      <button type="button" class="button">Button</button>
+      <button type="button" class="button">Button</button>
+      <button type="button" class="button">Button</button>
+    </div>
+    
   </div>
   <div class="component">
     <div class="button-group">
-  <label class="button" aria-checked="true">
-    <input class="button-group_radio" type="radio" name="options" id="option1" checked> Radio
-  </label>
-  <label class="button">
-    <input class="button-group_radio" type="radio" name="options" id="option2"> Radio
-  </label>
-  <label class="button">
-    <input class="button-group_radio" type="radio" name="options" id="option3"> Radio
-  </label>
-</div>
-
+      <label class="button" aria-checked="true">
+        <input class="button-group_radio" type="radio" name="options" id="option1" checked> Radio
+      </label>
+      <label class="button">
+        <input class="button-group_radio" type="radio" name="options" id="option2"> Radio
+      </label>
+      <label class="button">
+        <input class="button-group_radio" type="radio" name="options" id="option3"> Radio
+      </label>
+    </div>
+    
   </div>
   <div class="component">
     <label class="button">
-  <input type="checkbox"> Toggle
-</label>
-
+      <input type="checkbox"> Toggle
+    </label>
+    
   </div>
+
+  <div style="display: none">
+    <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 56 56" id="exclamation" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h12l-1 26H23L22 7z"/><circle cx="28" cy="43" r="6"/></symbol></svg>
+  </div>
+
   <script src="./components.js"></script>
 </body>
 </html>

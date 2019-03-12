@@ -1,0 +1,67 @@
+@define-mixin alert {
+  position: relative;
+  border-style: solid;
+  border-color: var(--alert-border-top-color) var(--alert-border-right-color) var(--alert-border-bottom-color) var(--alert-border-left-color);
+  border-width: var(--alert-border-top-width) var(--alert-border-right-width) var(--alert-border-bottom-width) var(--alert-border-left-width);
+  box-sizing: border-box;
+  display: flex;
+  font-weight: var(--alert-font-weight);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(0 - var(--alert-border-top-width));
+    bottom: calc(0 - var(--alert-border-bottom-width));
+  }
+
+  &::before {
+    background-color: var(--alert-border-left-color);
+    left: calc(0 - var(--alert-border-left-width));
+    width: var(--alert-border-left-width);
+  }
+
+  &::after {
+    background-color: var(--alert-border-right-color);
+    right: calc(0 - var(--alert-border-right-width));
+    width: var(--alert-border-right-width);
+  }
+}
+
+@define-mixin alertIcon {
+  background-color: var(--alert-icon-background-color);
+  padding-top: var(--alert-icon-padding-top);
+
+  & svg {
+    width: var(--alert-icon-width);
+    height: var(--alert-icon-width);
+    fill: var(--alert-icon-color);
+  }
+
+  $iconBgColor: var(--alert-icon-background-color);
+  $leftBorderColor: var(--alert-border-left-color);
+  $rightBorderColor: var(--alert-border-right-color);
+
+  @if $iconBgColor == $leftBorderColor {
+    &:first-child {
+      & svg {
+        position: relative;
+        left: calc(0 - var(--alert-border-left-width) /2);
+      }
+    }
+  }
+  @if $iconBgColor == $rightBorderColor {
+    &:last-child {
+      & svg {
+        position: relative;
+        right: calc(0 - var(--alert-border-right-width) /2);
+      }
+    }
+  }
+}
+
+@define-mixin alertBody {
+  font-size: var(--alert-font-size);
+  padding: 0.8em 1em;
+  flex-grow: 1;
+}

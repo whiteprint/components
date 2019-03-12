@@ -1,0 +1,28 @@
+@import "../variables.css";
+
+:root {
+  --alert-font-family: var(--component-font-family);
+  --alert-border-top-color: var(--component-border-color);
+  --alert-border-bottom-color: var(--component-border-color);
+  --alert-border-left-color: red;
+  --alert-border-right-color: var(--component-border-color);
+  --alert-border-top-width: var(--component-border-width);
+  --alert-border-bottom-width: var(--component-border-width);
+  --alert-border-left-width: 12px;
+  --alert-border-right-width: 12px;
+  --alert-font-weight: var(--component-font-weight-bold);
+  --alert-font-size: var(--component-font-size-large);
+  --alert-icon-width: 2.6em;
+  --alert-icon-background-color: var(--alert-border-left-color);
+  --alert-icon-color: var(--component-background-color);
+  --alert-icon-padding-top: 0.2em;
+}
+
+@custom-selector :--alert
+  .alert;
+
+@custom-selector :--alert-icon
+  .alert_icon;
+
+@custom-selector :--alert-body
+  .alert_body;

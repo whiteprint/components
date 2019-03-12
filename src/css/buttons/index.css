@@ -1,0 +1,13 @@
+@import "mixins";
+
+:--button {
+  @mixin button;
+
+  &:--button-primary-modifier {
+    @mixin buttonPrimary;
+  }
+}
+
+:--button-group {
+  @mixin buttonGroup;
+}
