@@ -4,16 +4,24 @@
   --alert-font-family: var(--component-font-family);
   --alert-border-top-color: var(--component-border-color);
   --alert-border-bottom-color: var(--component-border-color);
-  --alert-border-left-color: red;
+  --alert-border-left-color: var(--component-border-color);
   --alert-border-right-color: var(--component-border-color);
   --alert-border-top-width: var(--component-border-width);
   --alert-border-bottom-width: var(--component-border-width);
   --alert-border-left-width: 12px;
   --alert-border-right-width: 12px;
+  --alert-border-radius: var(--component-border-radius);
   --alert-font-weight: var(--component-font-weight-bold);
   --alert-font-size: var(--component-font-size-large);
+  --alert-heading-font-size: 1.5em;
+  --alert-heading-font-weight: var(--component-font-weight-bold);
+  --alert-divider-color: var(--component-border-color);
+  --alert-divider-width: 2px;
+  --alert-long-message-font-size: 0.9em;
+  --alert-long-message-weight: var(--component-font-weight-normal);
+  --alert-background-color: var(--component-background-color);
   --alert-icon-width: 2.6em;
-  --alert-icon-background-color: var(--alert-border-left-color);
+  --alert-icon-background-color: var(--component-border-color);
   --alert-icon-color: var(--component-background-color);
   --alert-icon-padding-top: 0.2em;
 }
@@ -24,5 +32,14 @@
 @custom-selector :--alert-icon
   .alert_icon;
 
+@custom-selector :--alert-heading
+  .alert_heading;
+
 @custom-selector :--alert-body
   .alert_body;
+
+@custom-selector :--alert-body-section
+  .alert_section;
+
+@custom-selector :--alert-body-section-long-modifier
+  [data-type="long"];

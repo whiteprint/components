@@ -6,6 +6,9 @@
   box-sizing: border-box;
   display: flex;
   font-weight: var(--alert-font-weight);
+  background-color: var(--alert-background-color);
+  border-radius: var(--alert-border-radius);
+  overflow: hidden;
 
   &::before,
   &::after {
@@ -31,6 +34,7 @@
 @define-mixin alertIcon {
   background-color: var(--alert-icon-background-color);
   padding-top: var(--alert-icon-padding-top);
+  position: relative;
 
   & svg {
     width: var(--alert-icon-width);
@@ -38,9 +42,29 @@
     fill: var(--alert-icon-color);
   }
 
+  $alertBg: var(--alert-background-color);
   $iconBgColor: var(--alert-icon-background-color);
   $leftBorderColor: var(--alert-border-left-color);
   $rightBorderColor: var(--alert-border-right-color);
+
+  @if $alertBg != $iconBgColor {
+    /* cover border above and below icon */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: var(--alert-border-top-width);
+      left: 0;
+      right: 0;
+      background-color: var(--alert-icon-background-color);
+    }
+    &::before {
+      top: calc(0 - var(--alert-border-top-width));
+    }
+    &::after {
+      bottom: calc(0 - var(--alert-border-bottom-width));
+    }
+  }
 
   @if $iconBgColor == $leftBorderColor {
     &:first-child {
@@ -64,4 +88,37 @@
   font-size: var(--alert-font-size);
   padding: 0.8em 1em;
   flex-grow: 1;
+
+  & :first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  & :last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+@define-mixin alertSection {
+  display: block;
+  border-bottom: solid var(--alert-divider-width) var(--alert-divider-color);
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+@define-mixin alertlongMessage {
+  font-size: var(--alert-long-message-font-size);
+  font-weight: var(--alert-long-message-weight);
+}
+
+@define-mixin alertHeading {
+  font-size: var(--alert-heading-font-size);
+  font-weight: var(--alert-heading-font-weight);
+  padding: 0;
+  margin: 0 0 0.5em 0;
 }

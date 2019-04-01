@@ -11,3 +11,15 @@
 :--alert-body {
   @mixin alertBody;
 }
+
+:--alert-body-section {
+  @mixin alertSection;
+
+  &:--alert-body-section-long-modifier {
+    @mixin alertlongMessage;
+  }
+}
+
+:--alert-heading {
+  @mixin alertHeading;
+}
