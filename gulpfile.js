@@ -13,7 +13,7 @@ const selectors = require('./selectors.js');
 
 // process HTML
 gulp.task('html', function(done) {
-  gulp.src('./src/index.html')
+  gulp.src('./src/html/index.html')
     .pipe(preprocess())
     .pipe(gulp.dest("./dist/"));
     done();
@@ -31,7 +31,7 @@ gulp.task('css', function(done) {
 
 // process CSS
 gulp.task('postcss', function () {
-  return gulp.src('./src/components.css')
+  return gulp.src('./src/css/components.css')
     .pipe(postcss())
     .pipe(gulp.dest('./dist'));
 });
@@ -39,7 +39,7 @@ gulp.task('postcss', function () {
 // process JS
 gulp.task('components:js', () => {
   return rollup.rollup({
-    input: './src/components.js',
+    input: './src/js/components.js',
     plugins: [
       jscc({
         values: {
@@ -61,7 +61,7 @@ gulp.task('components:js', () => {
 
 gulp.task('buttons:js', () => {
   return rollup.rollup({
-    input: './src/buttons.js',
+    input: './src/js/buttons/buttons.js',
     plugins: [
       jscc({
         values: { _SEL: selectors.customSelectors },
@@ -79,7 +79,7 @@ gulp.task('buttons:js', () => {
 
 gulp.task('dropdowns:js', () => {
   return rollup.rollup({
-    input: './src/dropdowns.js',
+    input: './src/js/dropdowns/dropdowns.js',
   }).then(bundle => {
     return bundle.write({
       file: './lib/dropdowns/index.js',
@@ -111,17 +111,17 @@ gulp.task('watch:css', function() {
 });
 
 gulp.task('watch:postcss', function() {
-  return gulp.watch(['./lib/**/*.css', './src/components.css'],
+  return gulp.watch(['./lib/**/*.css', './src/js/components.css'],
   gulp.series('postcss'));
 });
 
 gulp.task('watch:html', function() {
-  return gulp.watch(['./src/html/*.html', './src/index.html'],
+  return gulp.watch(['./src/html/**/*.html', './src/html/index.html'],
   gulp.series('html'));
 });
 
 gulp.task('watch:js', function() {
-  return gulp.watch(['./src/*.js', './selectors.js'],
+  return gulp.watch(['./src/**/*.js', './selectors.js'],
   gulp.series('components:js'));
 });
 
