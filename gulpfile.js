@@ -41,16 +41,9 @@ gulp.task('postcss', function () {
 // process JS
 gulp.task('components:js', () => {
   return rollup.rollup({
-    input: './src/js/components.js',
+    input: './src/js/_components.js',
     plugins: [
-      jscc({
-        values: {
-          _SEL: selectors.customSelectors,
-          _SEP: ", "
-        },
-      }),
       resolve(),
-      commonjs(),
       cleanup()
     ]
   }).then(bundle => {
@@ -124,7 +117,7 @@ gulp.task('watch:html', function() {
 
 gulp.task('watch:js', function() {
   return gulp.watch(['./src/**/*.js', './selectors.js'],
-  gulp.series('components:js'));
+  gulp.series(gulp.parallel('buttons:js', 'dropdowns:js'), 'components:js'));
 });
 
 gulp.task('watch:dist', function() {
