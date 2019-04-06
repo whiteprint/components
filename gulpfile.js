@@ -7,6 +7,7 @@ const jscc = require('rollup-plugin-jscc');
 const postcss = require('gulp-postcss');
 const preprocess = require("gulp-preprocess");
 const stripComments = require('gulp-strip-comments');
+const rename = require("gulp-rename");
 const browserSync = require('browser-sync').create();
 const selectors = require('./selectors.js');
 
@@ -21,7 +22,7 @@ gulp.task('html', function(done) {
 
 // clean up CSS
 gulp.task('css', function(done) {
-  gulp.src('./src/css/**/*')
+  gulp.src('./src/css/**/[^_]*.css')
     .pipe(stripComments.text({
       trim: true
     }))
@@ -31,8 +32,9 @@ gulp.task('css', function(done) {
 
 // process CSS
 gulp.task('postcss', function () {
-  return gulp.src('./src/css/components.css')
+  return gulp.src('./src/css/_components.css')
     .pipe(postcss())
+    .pipe(rename("components.css"))
     .pipe(gulp.dest('./dist'));
 });
 
@@ -111,7 +113,7 @@ gulp.task('watch:css', function() {
 });
 
 gulp.task('watch:postcss', function() {
-  return gulp.watch(['./lib/**/*.css', './src/js/components.css'],
+  return gulp.watch(['./lib/**/*.css', './src/css/_components.css'],
   gulp.series('postcss'));
 });
 
