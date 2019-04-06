@@ -9,6 +9,9 @@ module.exports = {
 		':--button': '.button',
 		':--button-primary-modifier': '[data-action="primary"]',
 		':--button-active-modifier': '[aria-pressed="true"]',
-		':--button-group': '.button-group'
+		':--button-group': '.button-group',
+		':--dropdown': '.menu[data-has-submenu="true"]',
+		':--dropdown-toggle': '.menu_submenu-toggle',
+		':--dropdown-content': '.menu_submenu'
 	}
 };

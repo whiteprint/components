@@ -39,30 +39,12 @@ gulp.task('postcss', function () {
 });
 
 // process JS
-gulp.task('components:js', () => {
-  return rollup.rollup({
-    input: './src/js/_components.js',
-    plugins: [
-      resolve(),
-      cleanup()
-    ]
-  }).then(bundle => {
-    return bundle.write({
-      file: './dist/components.js',
-      format: 'umd'
-    });
-  });
-});
-
 gulp.task('buttons:js', () => {
   return rollup.rollup({
     input: './src/js/buttons/buttons.js',
     plugins: [
-      jscc({
-        values: { _SEL: selectors.customSelectors },
-      }),
       commonjs(),
-      cleanup()
+      cleanup({ comments: [/^\/#/] }) // preserve jscc
     ]
   }).then(bundle => {
     return bundle.write({
@@ -71,7 +53,6 @@ gulp.task('buttons:js', () => {
     });
   });
 });
-
 gulp.task('dropdowns:js', () => {
   return rollup.rollup({
     input: './src/js/dropdowns/dropdowns.js',
@@ -79,6 +60,23 @@ gulp.task('dropdowns:js', () => {
     return bundle.write({
       file: './lib/dropdowns/index.js',
       format: 'es'
+    });
+  });
+});
+gulp.task('components:js', () => {
+  return rollup.rollup({
+    input: './src/js/_components.js',
+    plugins: [
+      jscc({
+        values: { _SEL: selectors.customSelectors },
+      }),
+      resolve(),
+      cleanup()
+    ]
+  }).then(bundle => {
+    return bundle.write({
+      file: './dist/components.js',
+      format: 'umd'
     });
   });
 });

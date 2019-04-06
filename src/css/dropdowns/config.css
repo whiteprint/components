@@ -1,0 +1,10 @@
+@import "../variables.css";
+
+:root {
+}
+
+@custom-selector :--dropdown .menu[data-has-submenu="true"];
+
+@custom-selector :--dropdown-toggle .menu_submenu-toggle;
+
+@custom-selector :--dropdown-content .menu_submenu;
