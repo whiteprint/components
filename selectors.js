@@ -11,6 +11,7 @@ module.exports = {
 		':--button-active-modifier': '[aria-pressed="true"]',
 		':--button-group': '.button-group',
 		':--dropdown-toggle': '.button.submenu-toggle, .menu .submenu-toggle',
-		':--dropdown-content': '.button.submenu-toggle + .submenu, .menu .submenu'
+		':--dropdown-content': '.button.submenu-toggle + .submenu, .menu .submenu',
+		':--dropdown-toggle-js': '[aria-haspopup="true"]'
 	}
 };

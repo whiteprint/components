@@ -1298,7 +1298,6 @@
   Popper.placements = placements;
   Popper.Defaults = Defaults;
 
-  var dropdownSelectors = [".button.submenu-toggle",".menu .submenu-toggle"];
   function dropdowns() {
     function queryDropdowns(s) {
       for (var i = 0; i < s.length; i++) {
@@ -1308,6 +1307,7 @@
         let popperInstance = new Popper(reference, popper, {
           placement: 'bottom-start'
         });
+        popper.setAttribute("aria-hidden", "true");
         reference.addEventListener('click', function(event) {
           event.preventDefault();
           if (popper.getAttribute("aria-hidden") == "true") {
@@ -1318,9 +1318,7 @@
         });
       }
     }
-    for (var i = 0; i < dropdownSelectors.length; i++) {
-      queryDropdowns(document.querySelectorAll(dropdownSelectors[i]));
-    }
+    queryDropdowns(document.querySelectorAll('[aria-haspopup="true"]'));
   }
 
   radioButtons();

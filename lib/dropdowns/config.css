@@ -8,3 +8,6 @@
 
 @custom-selector :--dropdown-content
   .button.submenu-toggle + .submenu, .menu .submenu;
+
+@custom-selector :--dropdown-toggle-js
+  [aria-haspopup="true"]
