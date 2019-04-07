@@ -10,8 +10,7 @@ module.exports = {
 		':--button-primary-modifier': '[data-action="primary"]',
 		':--button-active-modifier': '[aria-pressed="true"]',
 		':--button-group': '.button-group',
-		':--dropdown': '.menu[data-has-submenu="true"]',
-		':--dropdown-toggle': '.menu_submenu-toggle',
-		':--dropdown-content': '.menu_submenu'
+		':--dropdown-toggle': '.button.submenu-toggle, .menu .submenu-toggle',
+		':--dropdown-content': '.button.submenu-toggle + .submenu, .menu .submenu'
 	}
 };

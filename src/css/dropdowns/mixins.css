@@ -1,8 +1,6 @@
-@define-mixin dropdown  {
-}
-
 @define-mixin dropdownToggle {
   @nest .js & {
+
     &::after {
       content: '';
       margin-left: 0.3em;
@@ -23,5 +21,13 @@
 
   &[aria-hidden="true"] {
     display: none;
+  }
+
+  &:focus {
+    background-color: pink;
+  }
+
+  &:active {
+    background-color: red;
   }
 }

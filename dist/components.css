@@ -234,10 +234,7 @@
 :root {
 }
 
-.menu[data-has-submenu="true"] {
-}
-
-.js .menu_submenu-toggle::after {
+.js .button.submenu-toggle::after, .js .menu .submenu-toggle::after {
       content: '';
       margin-left: 0.3em;
       border-top: .3em solid currentColor;
@@ -249,11 +246,19 @@
       left: 0.2em;
     }
 
-.menu_submenu {
+.button.submenu-toggle+.submenu,.menu .submenu {
   background-color: #fff000;
   z-index: 1;
 }
 
-.menu_submenu[aria-hidden="true"] {
+.button.submenu-toggle+.submenu[aria-hidden="true"], .menu .submenu[aria-hidden="true"] {
     display: none;
+  }
+
+.button.submenu-toggle+.submenu:focus, .menu .submenu:focus {
+    background-color: pink;
+  }
+
+.button.submenu-toggle+.submenu:active, .menu .submenu:active {
+    background-color: red;
   }

@@ -13,7 +13,10 @@ JS needs to be run through [JSCC](https://github.com/aMarCruz/jscc).
 const selectors = require('./selectors.js');
 ```
 ```
-values: { _SEL: selectors.customSelectors }
+values: {
+  _SEL: selectors.customSelectors,
+  _SEP: ", "
+}
 ```
 
 ## Development

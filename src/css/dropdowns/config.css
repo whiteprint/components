@@ -3,8 +3,8 @@
 :root {
 }
 
-@custom-selector :--dropdown .menu[data-has-submenu="true"];
+@custom-selector :--dropdown-toggle
+  .button.submenu-toggle, .menu .submenu-toggle;
 
-@custom-selector :--dropdown-toggle .menu_submenu-toggle;
-
-@custom-selector :--dropdown-content .menu_submenu;
+@custom-selector :--dropdown-content
+  .button.submenu-toggle + .submenu, .menu .submenu;

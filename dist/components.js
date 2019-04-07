@@ -1298,6 +1298,7 @@
   Popper.placements = placements;
   Popper.Defaults = Defaults;
 
+  var dropdownSelectors = [".button.submenu-toggle",".menu .submenu-toggle"];
   function dropdowns() {
     function queryDropdowns(s) {
       for (var i = 0; i < s.length; i++) {
@@ -1305,15 +1306,21 @@
         let refID = s[i].id;
         let popper = document.querySelector('[aria-labelledby="' + refID + '"]');
         let popperInstance = new Popper(reference, popper, {
+          placement: 'bottom-start'
         });
         reference.addEventListener('click', function(event) {
           event.preventDefault();
-          console.log("clicked " + refID);
-          popper.setAttribute("aria-hidden", "false");
+          if (popper.getAttribute("aria-hidden") == "true") {
+            popper.setAttribute("aria-hidden", "false");
+          } else {
+            popper.setAttribute("aria-hidden", "true");
+          }
         });
       }
     }
-    queryDropdowns(document.querySelectorAll('.menu_submenu-toggle'));
+    for (var i = 0; i < dropdownSelectors.length; i++) {
+      queryDropdowns(document.querySelectorAll(dropdownSelectors[i]));
+    }
   }
 
   radioButtons();

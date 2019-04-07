@@ -68,7 +68,10 @@ gulp.task('components:js', () => {
     input: './src/js/_components.js',
     plugins: [
       jscc({
-        values: { _SEL: selectors.customSelectors },
+        values: {
+          _SEL: selectors.customSelectors,
+          _SEP: ", "
+        },
       }),
       resolve(),
       cleanup()
