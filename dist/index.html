@@ -58,7 +58,7 @@
     
   </div>
   <div class="component">
-    <button type="button" class="button" data-action="primary">Button</button>
+    <button type="button" class="button" data-action="primary"><svg class="button_icon" data-location="before"><use xlink:href="#tick" /></svg> Button</button>
     
   </div>
   <div class="component">
@@ -94,36 +94,36 @@
       <a class="submenu-toggle" id="dropdown-button-1" href="#" aria-haspopup="true">Dropdown</a>
       <ul class="submenu" aria-labelledby="dropdown-button-1" aria-hidden="true">
         <li>
-          <a href="#">1</a>
+          <a href="#" class="submenu_link">1</a>
         </li>
         <li>
-          <a href="#">1</a>
+          <a href="#" class="submenu_link">1</a>
         </li>
         <li>
-          <a href="#">1</a>
+          <a href="#" class="submenu_link">1</a>
         </li>
       </ul>
     </div>
     
     <br />
     
-    <a class="submenu-toggle button" id="dropdown-button-2" href="#" aria-haspopup="true">Dropdown 2</a>
+    <a class="submenu-toggle button" id="dropdown-button-2" href="#" aria-haspopup="true">Dropdown 2 <svg class="button_icon" data-location="after"><use xlink:href="#caret-down" /></svg></a>
     <ul class="submenu" aria-labelledby="dropdown-button-2">
       <li>
-        <a href="#">2</a>
+        <a href="#" class="submenu_link">Dropdown link</a>
       </li>
       <li>
-        <a href="#">2</a>
+        <a href="#" class="submenu_link" aria-current="page">Active link</a>
       </li>
       <li>
-        <a href="#">2</a>
+        <a href="#" class="submenu_link">Dropdown link</a>
       </li>
     </ul>
     
   </div>
 
   <div style="display: none">
-    <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 56 56" id="exclamation" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h12l-1 26H23L22 7z"/><circle cx="28" cy="43" r="6"/></symbol></svg>
+    <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 56 56" id="caret-down" xmlns="http://www.w3.org/2000/svg"><path d="M38 25L28 35 18 25h20z"/></symbol><symbol viewBox="0 0 56 56" id="cross" xmlns="http://www.w3.org/2000/svg"><path d="M11.48 37.926l25.964-25.965 7.071 7.071L18.55 44.997z"/><path d="M11.48 19.032l7.07-7.07 25.965 25.964-7.07 7.071z"/></symbol><symbol viewBox="0 0 56 56" id="exclamation" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h12l-1 26H23L22 7z"/><circle cx="28" cy="43" r="6"/></symbol><symbol viewBox="0 0 56 56" id="person" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="18" r="11"/><path d="M18.65 32h19.7A10.65 10.65 0 0 1 49 42.65V49H8v-6.35A10.65 10.65 0 0 1 18.65 32z"/></symbol><symbol viewBox="0 0 56 56" id="tick" xmlns="http://www.w3.org/2000/svg"><path d="M16.39 37.963l25.965-25.965 7.07 7.07-25.964 25.966z"/><path d="M8.004 29.563l7.07-7.071L30.54 37.956l-7.07 7.071z"/></symbol></svg>
   </div>
 
   <script src="./components.js"></script>

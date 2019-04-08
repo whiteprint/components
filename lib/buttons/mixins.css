@@ -146,3 +146,16 @@ $btnRad: strip(var(--button-border-radius));
     }
   }
 }
+
+@define-mixin buttonIcon {
+  fill: currentColor;
+  width: 1.8em;
+  height: 1.8em;
+  position: relative;
+}
+@define-mixin buttonIconBeforeModifier {
+  left: -0.5em;
+}
+@define-mixin buttonIconAfterModifier {
+  right: -0.5em;
+}

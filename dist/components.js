@@ -1305,7 +1305,13 @@
         let refID = s[i].id;
         let popper = document.querySelector('[aria-labelledby="' + refID + '"]');
         let popperInstance = new Popper(reference, popper, {
-          placement: 'bottom-start'
+          placement: 'bottom-start',
+          onCreate: data => {
+            popper.style.minWidth = reference.clientWidth + "px";
+          },
+          onUpdate: data => {
+            popper.style.minWidth = reference.clientWidth + "px";
+          },
         });
         popper.setAttribute("aria-hidden", "true");
         reference.addEventListener('click', function(event) {

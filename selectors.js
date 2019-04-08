@@ -10,8 +10,12 @@ module.exports = {
 		':--button-primary-modifier': '[data-action="primary"]',
 		':--button-active-modifier': '[aria-pressed="true"]',
 		':--button-group': '.button-group',
-		':--dropdown-toggle': '.button.submenu-toggle, .menu .submenu-toggle',
+		':--button-icon': '.button_icon',
+		':--button-icon-before-modifier': '[data-location="before"]',
+		':--button-icon-after-modifier': '[data-location="after"]',
+		':--dropdown-toggle-js': '[aria-haspopup="true"]',
 		':--dropdown-content': '.button.submenu-toggle + .submenu, .menu .submenu',
-		':--dropdown-toggle-js': '[aria-haspopup="true"]'
+		':--dropdown-content-link': '.submenu_link',
+		':--dropdown-content-link-active-modifier': '[aria-current]'
 	}
 };

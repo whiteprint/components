@@ -1,33 +1,73 @@
-@define-mixin dropdownToggle {
-  @nest .js & {
-
-    &::after {
-      content: '';
-      margin-left: 0.3em;
-      border-top: .3em solid currentColor;
-      border-right: .3em solid transparent;
-      border-bottom: 0;
-      border-left: .3em solid transparent;
-      position: relative;
-      top: 0.1em;
-      left: 0.2em;
-    }
-  }
-}
-
 @define-mixin dropdownContent {
-  background-color: #fff000;
+  background-color: var(--dropdown-bg-color);
+  color: var(--dropdown-text-color);
+  border: solid var(--dropdown-border-width) var(--dropdown-border-color);
+  padding: 0;
+  margin: 0;
   z-index: 1;
+  box-shadow: var(--dropdown-box-shadow);
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    left: 50%;
+    margin-left: calc(0 - calc(var(--dropdown-arrow-size)/2))
+  }
 
   &[aria-hidden="true"] {
     display: none;
   }
 
-  &:focus {
-    background-color: pink;
+  &[x-placement="bottom-start"] {
+    margin-top: var(--dropdown-offset);
+
+    &::after {
+      border-width: 0 calc(var(--dropdown-arrow-size)/2) calc(var(--dropdown-arrow-size)/2) calc(var(--dropdown-arrow-size)/2);
+      border-color: transparent transparent var(--dropdown-border-color) transparent;
+      top: calc( 0 - calc(calc(var(--dropdown-arrow-size) /2) + var(--dropdown-border-width)));
+    }
   }
 
-  &:active {
-    background-color: red;
+  &[x-placement="top-start"] {
+    margin-bottom: var(--dropdown-offset);
+
+    &::after {
+      border-width: calc(var(--dropdown-arrow-size)/2) calc(var(--dropdown-arrow-size)/2) 0 calc(var(--dropdown-arrow-size)/2);
+      border-color: var(--dropdown-border-color) transparent transparent transparent;
+      bottom: calc( 0 - calc(calc(var(--dropdown-arrow-size) /2) + var(--dropdown-border-width)));
+    }
+  }
+
+  & li {
+    display: block;
+  }
+}
+
+@define-mixin dropdownContentLink {
+  display: block;
+  color: var(--dropdown-link-color);
+  padding: 0.75em 1em;
+  color: var(--dropdown-link-color);
+  text-decoration: none;
+  font-weight: var(--dropdown-link-font-weight);
+
+  &:focus {
+    outline: solid var(--dropdown-link-focus-outline-offset) var(--dropdown-bg-color);
+    outline-offset: calc(0 - var(--dropdown-link-focus-outline-offset));
+    box-shadow: inset 0 0 var(--dropdown-link-focus-outline-blur) calc(var(--dropdown-link-focus-outline-width) + var(--dropdown-link-focus-outline-offset)) color(var(--dropdown-link-focus-outline-color) a(var(--dropdown-link-focus-outline-opacity)));
+  }
+}
+
+@define-mixin dropdownContentLinkActiveModifier {
+  background-color: var(--dropdown-link-active-bg-color);
+  color: var(--dropdown-link-active-text-color);
+
+  &:focus {
+    outline: solid var(--dropdown-link-focus-outline-offset) var(--dropdown-link-active-bg-color);
+    outline-offset: calc(0 - var(--dropdown-link-focus-outline-offset));
+    box-shadow: inset 0 0 var(--dropdown-link-focus-outline-blur) calc(var(--dropdown-link-focus-outline-width) + var(--dropdown-link-focus-outline-offset)) color(var(--dropdown-link-active-focus-outline-color) a(var(--dropdown-link-focus-outline-opacity)));
   }
 }

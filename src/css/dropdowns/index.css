@@ -1,9 +1,13 @@
 @import "mixins";
 
-:--dropdown-toggle {
-  @mixin dropdownToggle;
-}
-
 :--dropdown-content {
   @mixin dropdownContent;
+}
+
+:--dropdown-content-link {
+  @mixin dropdownContentLink;
+
+  &:--dropdown-content-link-active-modifier {
+    @mixin dropdownContentLinkActiveModifier;
+  }
 }

@@ -11,3 +11,15 @@
 :--button-group {
   @mixin buttonGroup;
 }
+
+:--button-icon {
+  @mixin buttonIcon;
+
+  &:--button-icon-before-modifier {
+    @mixin buttonIconBeforeModifier;
+  }
+
+  &:--button-icon-after-modifier {
+    @mixin buttonIconAfterModifier;
+  }
+}

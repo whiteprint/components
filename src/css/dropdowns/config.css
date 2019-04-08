@@ -1,13 +1,33 @@
 @import "../variables.css";
 
 :root {
+  --dropdown-bg-color: var(--component-main-color);
+  --dropdown-text-color: var(--component-background-color);
+  --dropdown-border-width: var(--component-border-width);
+  --dropdown-border-color: var(--component-border-color);
+  --dropdown-offset: 1.2em;
+  --dropdown-arrow-size: 1em;
+  --dropdown-box-shadow: 0px 0px 0px 4px #fff;
+  --dropdown-link-color: inherit;
+  --dropdown-link-font-weight: var(--component-font-weight-bold);
+  --dropdown-link-focus-outline-width: var(--component-focus-outline-width);
+  --dropdown-link-focus-outline-offset: 0;
+  --dropdown-link-focus-outline-blur: var(--component-focus-outline-blur);
+  --dropdown-link-focus-outline-opacity: var(--component-focus-outline-opacity);
+  --dropdown-link-focus-outline-color: var(--dropdown-text-color);
+  --dropdown-link-active-bg-color: var(--component-background-color);
+  --dropdown-link-active-text-color: var(--dropdown-bg-color);
+  --dropdown-link-active-focus-outline-color: var(--dropdown-bg-color);
 }
 
-@custom-selector :--dropdown-toggle
-  .button.submenu-toggle, .menu .submenu-toggle;
+@custom-selector :--dropdown-toggle-js
+  [aria-haspopup="true"];
 
 @custom-selector :--dropdown-content
   .button.submenu-toggle + .submenu, .menu .submenu;
 
-@custom-selector :--dropdown-toggle-js
-  [aria-haspopup="true"]
+@custom-selector :--dropdown-content-link
+  .submenu_link;
+
+@custom-selector :--dropdown-content-link-active-modifier
+  [aria-current];

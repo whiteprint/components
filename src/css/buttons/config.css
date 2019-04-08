@@ -30,6 +30,15 @@
 @custom-selector :--button-group
   .button-group;
 
+@custom-selector :--button-icon
+  .button_icon;
+
+@custom-selector :--button-icon-before-modifier
+  [data-location="before"];
+
+@custom-selector :--button-icon-after-modifier
+  [data-location="after"];
+
 /* @custom-selector :--button-block-modifier
   @nest aside &; */
 

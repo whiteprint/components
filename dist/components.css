@@ -231,34 +231,91 @@
     }
   }
 
-:root {
+.button_icon {
+  fill: currentColor;
+  width: 1.8em;
+  height: 1.8em;
+  position: relative
 }
 
-.js .button.submenu-toggle::after, .js .menu .submenu-toggle::after {
-      content: '';
-      margin-left: 0.3em;
-      border-top: .3em solid currentColor;
-      border-right: .3em solid transparent;
-      border-bottom: 0;
-      border-left: .3em solid transparent;
-      position: relative;
-      top: 0.1em;
-      left: 0.2em;
-    }
+.button_icon[data-location="before"] {
+    left: -0.5em;
+  }
+
+.button_icon[data-location="after"] {
+    right: -0.5em;
+  }
 
 .button.submenu-toggle+.submenu,.menu .submenu {
-  background-color: #fff000;
+  background-color: #282828;
+  color: #fff;
+  border: solid 4px #282828;
+  padding: 0;
+  margin: 0;
   z-index: 1;
+  box-shadow: 0px 0px 0px 4px #fff;
 }
+
+.button.submenu-toggle+.submenu::after, .menu .submenu::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    left: 50%;
+    margin-left: -0.5em
+  }
 
 .button.submenu-toggle+.submenu[aria-hidden="true"], .menu .submenu[aria-hidden="true"] {
     display: none;
   }
 
-.button.submenu-toggle+.submenu:focus, .menu .submenu:focus {
-    background-color: pink;
+.button.submenu-toggle+.submenu[x-placement="bottom-start"], .menu .submenu[x-placement="bottom-start"] {
+    margin-top: 1.2em
   }
 
-.button.submenu-toggle+.submenu:active, .menu .submenu:active {
-    background-color: red;
+.button.submenu-toggle+.submenu[x-placement="bottom-start"]::after, .menu .submenu[x-placement="bottom-start"]::after {
+      border-width: 0 0.5em 0.5em 0.5em;
+      border-color: transparent transparent #282828 transparent;
+      top: calc(-0.5em + -4px);
+    }
+
+.button.submenu-toggle+.submenu[x-placement="top-start"], .menu .submenu[x-placement="top-start"] {
+    margin-bottom: 1.2em
+  }
+
+.button.submenu-toggle+.submenu[x-placement="top-start"]::after, .menu .submenu[x-placement="top-start"]::after {
+      border-width: 0.5em 0.5em 0 0.5em;
+      border-color: #282828 transparent transparent transparent;
+      bottom: calc(-0.5em + -4px);
+    }
+
+.button.submenu-toggle+.submenu li, .menu .submenu li {
+    display: block;
+  }
+
+.submenu_link {
+  display: block;
+  color: inherit;
+  padding: 0.75em 1em;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600
+}
+
+.submenu_link:focus {
+    outline: solid 0 #282828;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 4px rgb(255, 255, 255);
+  }
+
+.submenu_link[aria-current] {
+    background-color: #fff;
+    color: #282828;
+  }
+
+.submenu_link[aria-current]:focus {
+    outline: solid 0 #fff;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 4px rgb(40, 40, 40);
   }
