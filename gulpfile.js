@@ -56,6 +56,9 @@ gulp.task('buttons:js', () => {
 gulp.task('dropdowns:js', () => {
   return rollup.rollup({
     input: './src/js/dropdowns/dropdowns.js',
+    plugins: [
+      cleanup({ comments: [/^\/#/] }) // preserve jscc
+    ]
   }).then(bundle => {
     return bundle.write({
       file: './lib/dropdowns/index.js',

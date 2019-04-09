@@ -31,6 +31,11 @@ export default function dropdowns() {
         },
       });
 
+      function closeDropdowns() {
+        popper.setAttribute("aria-hidden", "true");
+        document.removeEventListener('click', closeDropdowns);
+      }
+
       // close dropdowns
       popper.setAttribute("aria-hidden", "true");
 
@@ -42,9 +47,12 @@ export default function dropdowns() {
         if (popper.getAttribute("aria-hidden") == "true") {
           // open it
           popper.setAttribute("aria-hidden", "false");
-        } else {
-          // close it
-          popper.setAttribute("aria-hidden", "true");
+
+          // and on document click close it
+          setTimeout(function(){
+            document.addEventListener('click', closeDropdowns);
+          }, 0);
+
         }
       });
 

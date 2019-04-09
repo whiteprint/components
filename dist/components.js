@@ -1313,13 +1313,18 @@
             popper.style.minWidth = reference.clientWidth + "px";
           },
         });
+        function closeDropdowns() {
+          popper.setAttribute("aria-hidden", "true");
+          document.removeEventListener('click', closeDropdowns);
+        }
         popper.setAttribute("aria-hidden", "true");
         reference.addEventListener('click', function(event) {
           event.preventDefault();
           if (popper.getAttribute("aria-hidden") == "true") {
             popper.setAttribute("aria-hidden", "false");
-          } else {
-            popper.setAttribute("aria-hidden", "true");
+            setTimeout(function(){
+              document.addEventListener('click', closeDropdowns);
+            }, 0);
           }
         });
       }
