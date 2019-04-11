@@ -1,10 +1,14 @@
 {
   "name": "@whiteprint/components",
-  "version": "1.0.0",
-  "description": "Front-end framework",
-  "author": "Sam Smith",
+  "version": "0.1.0",
+  "description": "Components for Whiteprint, front-end component library",
+  "author": {
+    "name": "Sam Smith",
+    "url": "https://smth.uk"
+  },
   "license": "MIT",
   "devDependencies": {
+    "@whiteprint/icons": "^0.1.0",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
@@ -30,5 +34,6 @@
     "postcss-mixins": "^6.2.1",
     "postcss-nesting": "^7.0.0",
     "postcss-strip-units": "^2.0.1"
-  }
+  },
+  "homepage": "https://whiteprint.io/"
 }
