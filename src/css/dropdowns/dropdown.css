@@ -1,0 +1,23 @@
+@mixin dropdownVariables
+/*  1. bg color ............. */  var(--dropdown-bg-color),
+/*  2. text color ........... */  var(--dropdown-text-color),
+/*  3. border width ......... */  var(--dropdown-border-width),
+/*  4. border color ......... */  var(--dropdown-border-color),
+/*  5. dropdown offset ...... */  var(--dropdown-offset),
+/*  6. arrow size ........... */  var(--dropdown-arrow-size),
+/*  7. box shadow ........... */  var(--dropdown-box-shadow),
+/*  8. link color ........... */  var(--dropdown-link-color),
+/*  9. font weight .......... */  var(--dropdown-link-font-weight),
+/* 10. focus outline wwidth . */  var(--dropdown-link-focus-outline-width),
+/* 11. focus outline offset . */  var(--dropdown-link-focus-outline-offset),
+/* 12. focus outline blur ... */  var(--dropdown-link-focus-outline-blur),
+/* 13. focus outline opacity  */  var(--dropdown-link-focus-outline-opacity),
+/* 14. focus outline color .. */  var(--dropdown-link-focus-outline-color),
+/* 15. active bg color ...... */  var(--dropdown-link-active-bg-color),
+/* 16. active text color .... */  var(--dropdown-link-active-text-color),
+/* 17. active focus color ... */  var(--dropdown-link-active-focus-outline-color);
+
+@mixin dropdownSelectors
+/*  1. dropdown-content ..... */  .dropdown,
+/*  2. dropdown_link ........ */  .dropdown_link,
+/*  3. link-active-modifier . */  [aria-current];

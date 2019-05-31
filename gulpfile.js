@@ -20,9 +20,26 @@ gulp.task('html', function(done) {
     done();
 });
 
-// clean up CSS
-gulp.task('css', function(done) {
-  gulp.src('./src/css/**/[^_]*.css')
+// copy core CSS
+gulp.task('css:core', function(done) {
+  gulp.src('./src/css/*/*/*.css')
+    .pipe(stripComments.text({
+      trim: true
+    }))
+    .pipe(gulp.dest("./lib/"));
+    done();
+});
+
+// copy component CSS
+gulp.task('css:component', function(done) {
+  gulp.src('./src/css/*/*.css')
+    .pipe(gulp.dest("./lib/"));
+    done();
+});
+
+// copy CSS vars
+gulp.task('css:vars', function(done) {
+  gulp.src('./src/css/[^_]*.css')
     .pipe(stripComments.text({
       trim: true
     }))
@@ -106,7 +123,7 @@ gulp.task('reload', function(done) {
 // watching
 gulp.task('watch:css', function() {
   return gulp.watch(['./src/css/**/*.css'],
-  gulp.series('css'));
+  gulp.series(gulp.parallel('css:core', 'css:component', 'css:vars')));
 });
 
 gulp.task('watch:postcss', function() {

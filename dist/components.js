@@ -18,7 +18,7 @@
         });
       }
     }
-    queryRadioButtons(document.querySelectorAll('.button input[type="radio"]'));
+    queryRadioButtons(document.querySelectorAll('.js-button input[type="radio"]'));
   }
   function checkboxButtons() {
     function queryCheckboxButtons(s) {
@@ -34,7 +34,7 @@
         });
       }
     }
-    queryCheckboxButtons(document.querySelectorAll('.button input[type="checkbox"]'));
+    queryCheckboxButtons(document.querySelectorAll('.js-button input[type="checkbox"]'));
   }
 
   /**!

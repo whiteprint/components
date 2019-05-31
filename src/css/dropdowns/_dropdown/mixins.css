@@ -1,0 +1,137 @@
+@define-mixin dropdownVariables
+  $bg-color,
+  $text-color,
+  $border-width,
+  $border-color,
+  $offset,
+  $arrow-size,
+  $box-shadow,
+  $link-color,
+  $link-font-weight,
+  $link-focus-outline-width,
+  $link-focus-outline-offset,
+  $link-focus-outline-blur,
+  $link-focus-outline-opacity,
+  $link-focus-outline-color,
+  $link-active-bg-color,
+  $link-active-text-color,
+  $link-active-focus-outline-color {
+
+  $dropdown-bg-color: $bg-color;
+  $dropdown-text-color: $text-color;
+  $dropdown-border-width: $border-width;
+  $dropdown-border-color: $border-color;
+  $dropdown-offset: $offset;
+  $dropdown-arrow-size: $arrow-size;
+  $dropdown-box-shadow: $box-shadow;
+  $dropdown-link-color: $link-color;
+  $dropdown-link-font-weight: $link-font-weight;
+  $dropdown-link-focus-outline-width: $link-focus-outline-width;
+  $dropdown-link-focus-outline-offset: $link-focus-outline-offset;
+  $dropdown-link-focus-outline-blur: $link-focus-outline-blur;
+  $dropdown-link-focus-outline-opacity: $link-focus-outline-opacity;
+  $dropdown-link-focus-outline-color: $link-focus-outline-color;
+  $dropdown-link-active-bg-color: $link-active-bg-color;
+  $dropdown-link-active-text-color: $link-active-text-color;
+  $dropdown-link-active-focus-outline-color: $link-active-focus-outline-color;
+
+  @define-mixin dropdownContent {
+    background-color: $dropdown-bg-color;
+    color: $dropdown-text-color;
+    border: solid $dropdown-border-width $dropdown-border-color;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    box-shadow: $dropdown-box-shadow;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      left: 50%;
+      margin-left: calc(0 - calc($dropdown-arrow-size)/2);
+    }
+
+    &[aria-hidden="true"] {
+      display: none;
+    }
+
+    &[x-placement="bottom-start"] {
+      margin-top: $dropdown-offset;
+
+      &::after {
+        border-width: 0 calc($dropdown-arrow-size /2) calc($dropdown-arrow-size /2) calc($dropdown-arrow-size /2);
+        border-color: transparent transparent $dropdown-border-color transparent;
+        top: calc( 0 - calc(calc($dropdown-arrow-size /2) + $dropdown-border-width));
+      }
+    }
+
+    &[x-placement="top-start"] {
+      margin-bottom: $dropdown-offset;
+
+      &::after {
+        border-width: calc($dropdown-arrow-size /2) calc($dropdown-arrow-size /2) 0 calc($dropdown-arrow-size /2);
+        border-color: $dropdown-border-color transparent transparent transparent;
+        bottom: calc( 0 - calc(calc($dropdown-arrow-size /2) + $dropdown-border-width));
+      }
+    }
+
+    & li {
+      display: block;
+    }
+  }
+
+  @define-mixin dropdownContentLink {
+    display: block;
+    color: $dropdown-link-color;
+    padding: 0.75em 1em;
+    color: $dropdown-link-color;
+    text-decoration: none;
+    font-weight: $dropdown-link-font-weight;
+
+    &:focus {
+      outline: solid $dropdown-link-focus-outline-offset $dropdown-bg-color;
+      outline-offset: calc(0 - $dropdown-link-focus-outline-offset);
+      box-shadow: inset 0 0 $dropdown-link-focus-outline-blur calc($dropdown-link-focus-outline-width + $dropdown-link-focus-outline-offset) color($dropdown-link-focus-outline-color a($dropdown-link-focus-outline-opacity));
+    }
+  }
+
+  @define-mixin dropdownContentLinkActiveModifier {
+    background-color: $dropdown-link-active-bg-color;
+    color: $dropdown-link-active-text-color;
+
+    &:focus {
+      outline: solid $dropdown-link-focus-outline-offset $dropdown-link-active-bg-color;
+      outline-offset: calc(0 - $dropdown-link-focus-outline-offset);
+      box-shadow: inset 0 0 $dropdown-link-focus-outline-blur calc($dropdown-link-focus-outline-width + $dropdown-link-focus-outline-offset) color($dropdown-link-active-focus-outline-color a($dropdown-link-focus-outline-opacity));
+    }
+  }
+
+
+  /* structure */
+  @define-mixin dropdownSelectors
+    $selector: .dropdown,
+    $link-selector: .dropdown_link,
+    $active: [aria-current] {
+
+    $dropdown-selector: $selector;
+    $dropdown_link-selector: $link-selector;
+    $dropdown-active-modifier: $active;
+
+
+    $dropdown-selector {
+      @mixin dropdownContent;
+    }
+
+    $dropdown_link-selector {
+      @mixin dropdownContentLink;
+
+      &$dropdown-active-modifier {
+        @mixin dropdownContentLinkActiveModifier;
+      }
+    }
+
+  }
+}

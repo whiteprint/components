@@ -1,6 +1,6 @@
 {
   "name": "@whiteprint/components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Components for Whiteprint, front-end component library",
   "author": {
     "name": "Sam Smith",
@@ -32,8 +32,7 @@
     "postcss-custom-selectors": "^5.1.2",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.1",
-    "postcss-nesting": "^7.0.0",
-    "postcss-strip-units": "^2.0.1"
+    "postcss-nesting": "^7.0.0"
   },
   "homepage": "https://whiteprint.io/"
 }

@@ -1,0 +1,2 @@
+@custom-selector :--dropdown-toggle-js
+  [aria-haspopup="true"];

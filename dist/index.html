@@ -58,7 +58,7 @@
     
   </div>
   <div class="component">
-    <button type="button" class="button" data-action="primary"><svg class="button_icon" data-location="before"><use xlink:href="#tick" /></svg> Button</button>
+    <button type="button" class="button-primary"><svg class="button_icon" data-location="before"><use xlink:href="#tick" /></svg> Button</button>
     
   </div>
   <div class="component">
@@ -71,20 +71,20 @@
   </div>
   <div class="component">
     <div class="button-group">
-      <label class="button" aria-checked="true">
-        <input class="button-group_radio" type="radio" name="options" id="option1" checked> Radio
+      <label class="button js-button" aria-checked="true">
+        <input type="radio" name="options" id="option1" checked> Radio
       </label>
-      <label class="button">
-        <input class="button-group_radio" type="radio" name="options" id="option2"> Radio
+      <label class="button js-button">
+        <input type="radio" name="options" id="option2"> Radio
       </label>
-      <label class="button">
-        <input class="button-group_radio" type="radio" name="options" id="option3"> Radio
+      <label class="button js-button">
+        <input type="radio" name="options" id="option3"> Radio
       </label>
     </div>
     
   </div>
   <div class="component">
-    <label class="button">
+    <label class="button js-button">
       <input type="checkbox"> Toggle
     </label>
     
@@ -92,31 +92,31 @@
   <div class="component">
     <div class="menu">
       <a class="submenu-toggle" id="dropdown-button-1" href="#" aria-haspopup="true">Dropdown</a>
-      <ul class="submenu" aria-labelledby="dropdown-button-1" aria-hidden="true">
+      <ul class="dropdown" aria-labelledby="dropdown-button-1" aria-hidden="true">
         <li>
-          <a href="#" class="submenu_link">1</a>
+          <a href="#" class="dropdown_link">1</a>
         </li>
         <li>
-          <a href="#" class="submenu_link">1</a>
+          <a href="#" class="dropdown_link">1</a>
         </li>
         <li>
-          <a href="#" class="submenu_link">1</a>
+          <a href="#" class="dropdown_link">1</a>
         </li>
       </ul>
     </div>
     
     <br />
     
-    <a class="submenu-toggle button" id="dropdown-button-2" href="#" aria-haspopup="true">Dropdown 2 <svg class="button_icon" data-location="after"><use xlink:href="#caret-down" /></svg></a>
-    <ul class="submenu" aria-labelledby="dropdown-button-2">
+    <a class="button" id="dropdown-button-2" href="#" aria-haspopup="true">Dropdown 2 <svg class="button_icon" data-location="after"><use xlink:href="#caret-down" /></svg></a>
+    <ul class="dropdown" aria-labelledby="dropdown-button-2">
       <li>
-        <a href="#" class="submenu_link">Dropdown link</a>
+        <a href="#" class="dropdown_link">Dropdown link</a>
       </li>
       <li>
-        <a href="#" class="submenu_link" aria-current="page">Active link</a>
+        <a href="#" class="dropdown_link" aria-current="page">Active link</a>
       </li>
       <li>
-        <a href="#" class="submenu_link">Dropdown link</a>
+        <a href="#" class="dropdown_link">Dropdown link</a>
       </li>
     </ul>
     

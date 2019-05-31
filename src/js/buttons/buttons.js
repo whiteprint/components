@@ -1,5 +1,5 @@
 // compile-time vars
-//#set _BTNSEL = _SEL[":--button"]
+//#set _BTNSEL = _SEL[":--button-js"]
 //#set _RADINPT = 'input[type="radio"]'
 //#set _CHKINPT = 'input[type="checkbox"]'
 // check whether there are multiple selectors

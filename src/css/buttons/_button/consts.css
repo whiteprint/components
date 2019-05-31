@@ -1,0 +1,8 @@
+@custom-selector :--button-js
+  .js-button;
+
+@custom-selector :--button-icon-before-modifier
+  [data-location="before"];
+
+@custom-selector :--button-icon-after-modifier
+  [data-location="after"];

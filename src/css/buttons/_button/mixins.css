@@ -1,0 +1,164 @@
+@define-mixin buttonVariables
+  $bg-color,
+  $txt-color,
+  $height,
+  $font-size,
+  $font-weight,
+  $font-family,
+  $border-width,
+  $border-radius,
+  $focus-outline-width,
+  $focus-outline-offset,
+  $focus-outline-opacity,
+  $focus-outline-blur,
+  $expand-max: 0 {
+
+  $button-bg-color: $bg-color;
+  $button-txt-color: $txt-color;
+  $button-height: $height;
+  $button-font-size: $font-size;
+  $button-font-weight: $font-weight;
+  $button-font-family: $font-family;
+  $button-border-width: $border-width;
+  $button-border-radius: $border-radius;
+  $button-focus-outline-width: $focus-outline-width;
+  $button-focus-outline-offset: $focus-outline-offset;
+  $button-focus-outline-opacity: $focus-outline-opacity;
+  $button-focus-outline-blur: $focus-outline-blur;
+  $button-expand-max: $expand-max;
+
+
+  @define-mixin blockButtonMod {
+    display: flex;
+    width: 100%;
+  }
+
+  @define-mixin buttonActive $col, $txt-col {
+    background-color: $col;
+    color: $txt-col;
+  }
+
+  @define-mixin buttonCol $col, $txt-col, $active-modifier {
+    background-color: $col;
+    color: $txt-col;
+    border-color: $col;
+
+    &:focus,
+    &:focus-within {
+      &::before {
+        box-shadow: 0 0 $button-focus-outline-blur $button-focus-outline-width color($col a($button-focus-outline-opacity));
+      }
+    }
+
+    &:active,
+    &[aria-checked="true"],
+    &$active-modifier {
+      @mixin buttonActive $txt-col, $col;
+    }
+  }
+
+
+  @define-mixin button $active-mod {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-left: 1em;
+    padding-right: 1em;
+    min-height: $button-height;
+    font-family: $button-font-family;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    user-select: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border-style: solid;
+    border-width: $button-border-width;
+    border-radius: $button-border-radius;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(0 - $button-border-width - $button-focus-outline-offset);
+      right: calc(0 - $button-border-width - $button-focus-outline-offset);
+      bottom: calc(0 - $button-border-width - $button-focus-outline-offset);
+      left: calc(0 - $button-border-width - $button-focus-outline-offset);
+      @if $button-border-radius != 0 {
+        border-radius: calc($button-border-radius + $button-focus-outline-offset);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:focus,
+    &:focus-within {
+      outline-width: $button-focus-outline-width;
+    }
+
+    @mixin buttonCol $button-bg-color, $button-txt-color, $active-mod;
+
+    @media (max-width: $button-expand-max) {
+      @mixin blockButtonMod;
+    }
+
+    @nest .js & {
+      & input[type="radio"],
+      & input[type="checkbox"] {
+        position: absolute;
+        clip: rect(0,0,0,0);
+      }
+    }
+  }
+
+
+  @define-mixin buttonIcon {
+    fill: currentColor;
+    width: 1.8em;
+    height: 1.8em;
+    position: relative;
+  }
+  @define-mixin buttonIconBeforeModifier {
+    left: -0.5em;
+  }
+  @define-mixin buttonIconAfterModifier {
+    right: -0.5em;
+  }
+
+}
+
+
+/* structure */
+@define-mixin buttonSelectors
+  $selector: .button,
+  $icon-selector: .button_icon,
+  $active: [aria-pressed="true"] {
+
+  $button-selector: $selector;
+  $button-icon-selector: $icon-selector;
+
+
+  $button-selector {
+    @mixin button $active;
+  }
+
+  $button-icon-selector {
+    @mixin buttonIcon;
+
+    &:--button-icon-before-modifier {
+      @mixin buttonIconBeforeModifier;
+    }
+
+    &:--button-icon-after-modifier {
+      @mixin buttonIconAfterModifier;
+    }
+  }
+}

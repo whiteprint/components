@@ -1,0 +1,32 @@
+@mixin alertVariables
+/*  1. bg-color ............. */  var(--alert-background-color),
+/*  2. txt-color ............ */  var(--alert-text-color),
+/*  3. border top color ..... */  var(--alert-border-top-color),
+/*  4. border-bottom-color .. */  var(--alert-border-bottom-color),
+/*  5. border-left-color .... */  var(--alert-border-left-color),
+/*  6. border-right-color ... */  var(--alert-border-right-color),
+/*  7. border-top-width ..... */  var(--alert-border-top-width),
+/*  8. border-bottom-width .. */  var(--alert-border-bottom-width),
+/*  9. border-left-width .... */  var(--alert-border-left-width),
+/* 10. txt-color ............ */  var(--alert-border-right-width),
+/* 11. border-right-width ... */  var(--alert-border-radius),
+/* 12. font-size ............ */  var(--alert-font-size),
+/* 13. font-weight .......... */  var(--alert-font-weight),
+/* 14. font-family .......... */  var(--alert-font-family),
+/* 15. heading-font-size .... */  var(--alert-heading-font-size),
+/* 16. heading-font-weight .. */  var(--alert-heading-font-weight),
+/* 17. divider-color ........ */  var(--alert-divider-color),
+/* 18. divider-width ........ */  var(--alert-divider-width),
+/* 19. long-message-font-size */  var(--alert-long-message-font-size),
+/* 20. long-message-weight .. */  var(--alert-long-message-weight),
+/* 21. icon-width ........... */  var(--alert-icon-width),
+/* 22. icon-bg-color ........ */  var(--alert-icon-background-color),
+/* 23. icon-color ........... */  var(--alert-icon-color),
+/* 24. icon-padding-top ..... */  var(--alert-icon-padding-top);
+
+@mixin alertSelectors
+/*  1. alert ................ */  .alert,
+/*  2. alert icon ........... */  .alert_icon,
+/*  3. alert heading ........ */  .alert_heading,
+/*  4. alert body ........... */  .alert_body,
+/*  5. alert body section ... */  .alert_section;

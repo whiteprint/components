@@ -1,0 +1,217 @@
+@define-mixin alertVariables
+  $background-color,
+  $text-color,
+  $border-top-color,
+  $border-bottom-color,
+  $border-left-color,
+  $border-right-color,
+  $border-top-width,
+  $border-bottom-width,
+  $border-left-width,
+  $border-right-width,
+  $border-radius,
+  $font-size,
+  $font-weight,
+  $font-family,
+  $heading-font-size,
+  $heading-font-weight,
+  $divider-color,
+  $divider-width,
+  $long-message-font-size,
+  $long-message-weight,
+  $icon-width,
+  $icon-background-color,
+  $icon-color,
+  $icon-padding-top {
+
+  $alert-background-color: $background-color;
+  $alert-text-color: $text-color;
+  $alert-border-top-color: $border-top-color;
+  $alert-border-bottom-color: $border-bottom-color;
+  $alert-border-left-color: $border-left-color;
+  $alert-border-right-color: $border-right-color;
+  $alert-border-top-width: $border-top-width;
+  $alert-border-bottom-width: $border-bottom-width;
+  $alert-border-left-width: $border-left-width;
+  $alert-border-right-width: $border-right-width;
+  $alert-border-radius: $border-radius;
+  $alert-font-size: $font-size;
+  $alert-font-weight: $font-weight;
+  $alert-font-family: $font-family;
+  $alert-heading-font-size: $heading-font-size;
+  $alert-heading-font-weight: $heading-font-weight;
+  $alert-divider-color: $divider-color;
+  $alert-divider-width: $divider-width;
+  $alert-long-message-font-size: $long-message-font-size;
+  $alert-long-message-weight: $long-message-weight;
+  $alert-icon-width: $icon-width;
+  $alert-icon-background-color: $icon-background-color;
+  $alert-icon-color: $icon-color;
+  $alert-icon-padding-top: $icon-padding-top;
+
+  @define-mixin alert {
+    position: relative;
+    border-style: solid;
+    border-color: $alert-border-top-color $alert-border-right-color $alert-border-bottom-color $alert-border-left-color;
+    border-width: $alert-border-top-width $alert-border-right-width $alert-border-bottom-width $alert-border-left-width;
+    box-sizing: border-box;
+    display: flex;
+    font-weight: $alert-font-weight;
+    background-color: $alert-background-color;
+    color: $alert-text-color;
+    border-radius: $alert-border-radius;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(0 - $alert-border-top-width);
+      bottom: calc(0 - $alert-border-bottom-width);
+    }
+
+    &::before {
+      background-color: $alert-border-left-color;
+      left: calc(0 - $alert-border-left-width);
+      width: $alert-border-left-width;
+    }
+
+    &::after {
+      background-color: $alert-border-right-color;
+      right: calc(0 - $alert-border-right-width);
+      width: $alert-border-right-width;
+    }
+  }
+
+  @define-mixin alertIcon {
+    background-color: $alert-icon-background-color;
+    padding-top: $alert-icon-padding-top;
+    position: relative;
+
+    & svg {
+      width: var(--alert-icon-width);
+      height: var(--alert-icon-width);
+      fill: var(--alert-icon-color);
+    }
+
+    $alertBg: $alert-background-color;
+    $iconBgColor: $alert-icon-background-color;
+    $leftBorderColor: $alert-border-left-color;
+    $rightBorderColor: $alert-border-right-color;
+
+    @if $alertBg != $iconBgColor {
+      /* cover border above and below icon */
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: $alert-border-top-width;
+        left: 0;
+        right: 0;
+        background-color: $alert-icon-background-color;
+      }
+      &::before {
+        top: calc(0 - $alert-border-top-width);
+      }
+      &::after {
+        bottom: calc(0 - $alert-border-bottom-width);
+      }
+    }
+
+    @if $iconBgColor == $leftBorderColor {
+      &:first-child {
+        & svg {
+          position: relative;
+          left: calc(0 - $alert-border-left-width /2);
+        }
+      }
+    }
+    @if $iconBgColor == $rightBorderColor {
+      &:last-child {
+        & svg {
+          position: relative;
+          right: calc(0 - $alert-border-right-width /2);
+        }
+      }
+    }
+  }
+
+  @define-mixin alertBody {
+    font-size: $alert-font-size;
+    padding: 0.8em 1em;
+    flex-grow: 1;
+
+    & :first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    & :last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  @define-mixin alertSection {
+    display: block;
+    border-bottom: solid $alert-divider-width $alert-divider-color;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @define-mixin alertlongMessage {
+    font-size: $alert-long-message-font-size;
+    font-weight: $alert-long-message-weight;
+  }
+
+  @define-mixin alertHeading {
+    font-size: $alert-heading-font-size;
+    font-weight: $alert-heading-font-weight;
+    padding: 0;
+    margin: 0 0 0.5em 0;
+  }
+}
+
+/* structure */
+@define-mixin alertSelectors
+  $alert: .alert,
+  $alert_icon: .alert_icon,
+  $alert_heading: .alert_heading,
+  $alert_body: .alert_body,
+  $alert_section: .alert_section {
+
+  $alert-selector: $alert;
+  $alert_icon-selector: $alert_icon;
+  $alert_heading-selector: $alert_heading;
+  $alert_body-selector: $alert_body;
+  $alert_section-selector: $alert_section;
+
+  $alert-selector {
+    @mixin alert;
+  }
+
+  $alert_icon-selector {
+    @mixin alertIcon;
+  }
+
+  $alert_body-selector {
+    @mixin alertBody;
+  }
+
+  $alert_section-selector {
+    @mixin alertSection;
+
+    &:--alert-body-section-long-modifier {
+      @mixin alertlongMessage;
+    }
+  }
+
+  $alert_heading-selector {
+    @mixin alertHeading;
+  }
+
+}

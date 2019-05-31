@@ -1,21 +1,9 @@
 module.exports = {
 	customSelectors: {
-		':--alert': '.alert',
-		':--alert-icon': '.alert_icon',
-		':--alert-heading': '.alert_heading',
-		':--alert-body': '.alert_body',
-		':--alert-body-section': '.alert_section',
 		':--alert-body-section-long-modifier': '[data-type="long"]',
-		':--button': '.button',
-		':--button-primary-modifier': '[data-action="primary"]',
-		':--button-active-modifier': '[aria-pressed="true"]',
-		':--button-group': '.button-group',
-		':--button-icon': '.button_icon',
+		':--button-js': '.js-button',
 		':--button-icon-before-modifier': '[data-location="before"]',
 		':--button-icon-after-modifier': '[data-location="after"]',
-		':--dropdown-toggle-js': '[aria-haspopup="true"]',
-		':--dropdown-content': '.button.submenu-toggle + .submenu, .menu .submenu',
-		':--dropdown-content-link': '.submenu_link',
-		':--dropdown-content-link-active-modifier': '[aria-current]'
+		':--dropdown-toggle-js': '[aria-haspopup="true"]'
 	}
 };

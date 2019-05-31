@@ -19,15 +19,3 @@
   --dropdown-link-active-text-color: var(--dropdown-bg-color);
   --dropdown-link-active-focus-outline-color: var(--dropdown-bg-color);
 }
-
-@custom-selector :--dropdown-toggle-js
-  [aria-haspopup="true"];
-
-@custom-selector :--dropdown-content
-  .button.submenu-toggle + .submenu, .menu .submenu;
-
-@custom-selector :--dropdown-content-link
-  .submenu_link;
-
-@custom-selector :--dropdown-content-link-active-modifier
-  [aria-current];

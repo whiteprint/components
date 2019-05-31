@@ -1,6 +1,8 @@
 @import "../variables.css";
 
 :root {
+  --button-bg-color: var(--component-main-color);
+  --button-txt-color: var(--component-background-color);
   --button-height: var(--component-input-height);
   --button-font-size: var(--component-font-size-large);
   --button-font-weight: var(--component-font-weight-bold);
@@ -12,31 +14,6 @@
   --button-focus-outline-opacity: var(--component-focus-outline-opacity);
   --button-focus-outline-blur: var(--component-focus-outline-blur);
   --button-group-gap: var(--button-focus-outline-offset);
-  --button-bg-color: var(--component-main-color);
-  --button-txt-color: var(--component-background-color);
-  --button-primary-bg-color: var(--component-emphasis-primary);
-  --button-primary-txt-color: var(--button-txt-color);
+  --button-expand-max: var(--component-for-tablet-portrait);
+  --button-emphasis-primary: var(--component-emphasis-primary);
 }
-
-@custom-selector :--button
-  .button;
-
-@custom-selector :--button-primary-modifier
-  [data-action="primary"];
-
-@custom-selector :--button-active-modifier
-  [aria-pressed="true"];
-
-@custom-selector :--button-group
-  .button-group;
-
-@custom-selector :--button-icon
-  .button_icon;
-
-@custom-selector :--button-icon-before-modifier
-  [data-location="before"];
-
-@custom-selector :--button-icon-after-modifier
-  [data-location="after"];
-
-@custom-media --button-block (max-width: 600px);

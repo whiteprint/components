@@ -5,7 +5,6 @@ module.exports = {
     'postcss-custom-media': {},
     'postcss-custom-selectors': {exportTo: 'selectors.js'},
     'postcss-custom-properties': {preserve: false},
-    'postcss-strip-units': {},
     'postcss-advanced-variables': {disable: '@mixin, @include, @content, @import'},
     'postcss-color-function': {},
     'postcss-calc': {},

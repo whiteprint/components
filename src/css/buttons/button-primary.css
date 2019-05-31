@@ -1,0 +1,19 @@
+@mixin buttonVariables
+/*  1. bg-color ............. */  var(--button-emphasis-primary),
+/*  2. txt-color ............ */  var(--button-txt-color),
+/*  3. height ............... */  var(--button-height),
+/*  4. font-size ............ */  var(--button-font-size),
+/*  5. font-weight .......... */  var(--button-font-weight),
+/*  6. font-family .......... */  var(--button-font-family),
+/*  7. border-width ......... */  var(--button-border-width),
+/*  8. border-radius ........ */  var(--button-border-radius),
+/*  9. focus-outline-width .. */  var(--button-focus-outline-width),
+/* 10. focus-outline-offset . */  var(--button-focus-outline-offset),
+/* 11. focus-outline-opacity  */  var(--button-focus-outline-opacity),
+/* 12. focus-outline-blur ... */  var(--button-focus-outline-blur),
+/* 13. expand-max ........... */  var(--button-expand-max);
+
+@mixin buttonSelectors
+/*  1. button ............... */  .button-primary,
+/*  2. button icon .......... */  .button-primary_icon,
+/*  3. button active modifier */  [aria-pressed="true"];
