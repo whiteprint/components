@@ -10,6 +10,7 @@
     .component {
       margin-bottom: 2em;
     }
+    <!-- @include ../../node_modules/@whiteprint/placeholders/placeholders.css -->
   </style>
   <script>
     document.documentElement.className =
@@ -44,11 +45,18 @@
   <div class="component">
     <!-- @include dropdowns/button.html -->
   </div>
+  <div class="component">
+    <!-- @include cards/card.html -->
+  </div>
 
   <div style="display: none">
     <!-- @include ../../node_modules/@whiteprint/icons/symbol/svg/sprite.symbol.svg -->
   </div>
 
   <script src="./components.js"></script>
+
+  <script>
+    <!-- @include ../../node_modules/@whiteprint/placeholders/placeholders.js -->
+  </script>
 </body>
 </html>

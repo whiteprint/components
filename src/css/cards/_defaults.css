@@ -1,0 +1,14 @@
+@import "../variables.css";
+
+:root {
+  --card-background-color: var(--component-background-color);
+  --card-text-color: var(--component-main-color);
+  --card-border-color: var(--component-border-color);
+  --card-border-width: var(--component-border-width);
+  --card-border-radius: var(--component-border-radius);
+  --card-img-border-width: var(--component-border-width);
+  --card-img-height: 30vh;
+  --card-v-pad: var(--component-h-pad);
+  --card-h-pad: var(--component-h-pad);
+  --card-title-font-size: var(--component-font-size-three);
+}

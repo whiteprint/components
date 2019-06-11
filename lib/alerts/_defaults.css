@@ -12,7 +12,7 @@
   --alert-border-right-width: 12px;
   --alert-border-radius: var(--component-border-radius);
   --alert-font-weight: var(--component-font-weight-bold);
-  --alert-font-size: var(--component-font-size-large);
+  --alert-font-size: var(--component-font-size-two);
   --alert-text-color: var(--component-main-color);
   --alert-heading-font-size: 1.5em;
   --alert-heading-font-weight: var(--component-font-weight-bold);

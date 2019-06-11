@@ -3,8 +3,9 @@
   --component-main-color: #282828;
   --component-background-color: #fff;
   --component-font-family: inherit;
-  --component-font-size: 1em;
-  --component-font-size-large: 1.1em;
+  --component-font-size-one: 1rem;
+  --component-font-size-two: 1.1rem;
+  --component-font-size-three: 1.4rem;
   --component-font-weight-normal: 400;
   --component-font-weight-bold: 600;
   --component-border-radius: 0;
@@ -16,4 +17,6 @@
   --component-focus-outline-blur: 0;
   --component-input-height: 2.8rem;
   --component-for-tablet-portrait: 600px;
+  --component-v-pad: 0.8rem;
+  --component-h-pad: 1rem;
 }

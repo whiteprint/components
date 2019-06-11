@@ -1,0 +1,83 @@
+@define-mixin cardVariables
+  $background-color,
+  $text-color,
+  $border-width,
+  $border-color,
+  $border-radius,
+  $img-border-width,
+  $img-height,
+  $v-pad,
+  $h-pad,
+  $title-font-size
+  {
+
+  $card-background-color: $background-color;
+  $card-text-color: $text-color;
+  $card-border-width: $border-width;
+  $card-border-color: $border-color;
+  $card-border-radius: $border-radius;
+  $card-img-border-width: $img-border-width;
+  $card-img-height: $img-height;
+  $card-v-pad: $v-pad;
+  $card-h-pad: $h-pad;
+  $card-title-font-size: $title-font-size;
+
+  @define-mixin card {
+    background-color: $card-background-color;
+    color: $card-text-color;
+    border: solid $card-border-width $card-border-color;
+    border-radius: $card-border-radius;
+  }
+
+  @define-mixin cardImage {
+    border-bottom: solid $card-img-border-width $card-border-color;
+    height: $card-img-height;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  @define-mixin cardBody {
+    padding: $card-v-pad $card-h-pad;
+  }
+
+  @define-mixin cardTitle {
+    font-size: $card-title-font-size;
+    margin: 0.25em 0 0 0;
+  }
+}
+
+/* structure */
+@define-mixin cardSelectors
+  $card: .card,
+  $card_image: .card_image,
+  $card_body: .card_body,
+  $card_title: .card_title {
+
+  $card-selector: $card;
+  $card_image-selector: $card_image;
+  $card_body-selector: $card_body;
+  $card_title-selector: $card_title;
+
+  $card-selector {
+    @mixin card;
+  }
+
+  $card_image-selector {
+    @mixin cardImage;
+  }
+
+  $card_body-selector {
+    @mixin cardBody;
+  }
+
+  $card_title-selector {
+    @mixin cardTitle;
+  }
+
+}
