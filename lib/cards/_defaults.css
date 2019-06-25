@@ -14,4 +14,5 @@
   --card-footer-padding: 1rem;
   --card-line-height: 1.4;
   --card-font-family: var(--component-font-family);
+  --card-shadow: none;
 }

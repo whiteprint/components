@@ -22,7 +22,8 @@
   $icon-width,
   $icon-background-color,
   $icon-color,
-  $icon-padding-top {
+  $icon-padding-top,
+  $box-shadow: none {
 
   $alert-background-color: $background-color;
   $alert-text-color: $text-color;
@@ -48,6 +49,7 @@
   $alert-icon-background-color: $icon-background-color;
   $alert-icon-color: $icon-color;
   $alert-icon-padding-top: $icon-padding-top;
+  $alert-box-shadow: $box-shadow;
 
   @define-mixin alert {
     position: relative;
@@ -62,6 +64,7 @@
     color: $alert-text-color;
     border-radius: $alert-border-radius;
     overflow: hidden;
+    box-shadow: $alert-box-shadow;
 
     &::before,
     &::after {

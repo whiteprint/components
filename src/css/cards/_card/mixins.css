@@ -11,6 +11,7 @@
   $section-spacing,
   $footer-padding,
   $line-height,
+  $box-shadow: none,
   $font-family: inherit {
 
   $card-background-color: $background-color;
@@ -25,6 +26,7 @@
   $card-section-spacing: $section-spacing;
   $card-footer-padding: $footer-padding;
   $card-line-height: $line-height;
+  $card-box-shadow: $box-shadow;
   $card-font-family: $font-family;
 
   @define-mixin card {
@@ -34,6 +36,7 @@
     border-radius: $card-border-radius;
     font-family: $card-font-family;
     line-height: $card-line-height;
+    box-shadow: $card-box-shadow;
 
     & img {
       max-width: 100%;

@@ -16,4 +16,5 @@
   --button-group-gap: var(--button-focus-outline-offset);
   --button-expand-max: var(--component-for-tablet-portrait);
   --button-emphasis-primary: var(--component-emphasis-primary);
+  --button-shadow: none;
 }

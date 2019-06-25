@@ -25,4 +25,5 @@
   --alert-icon-background-color: var(--component-border-color);
   --alert-icon-color: var(--component-background-color);
   --alert-icon-padding-top: 0.2em;
+  --alert-shadow: none;
 }

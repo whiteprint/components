@@ -11,7 +11,8 @@
 /* 10. section spacing ...... */  var(--card-section-spacing),
 /* 11. footer padding ....... */  var(--card-footer-padding),
 /* 12. line height .......... */  var(--card-line-height),
-/* 13. font family .......... */  var(--card-font-family);
+/* 13. box shadow ........... */  var(--card-shadow),
+/* 14. font family .......... */  var(--card-font-family);
 
 @mixin cardSelectors
 /*  1. card ................. */  .card,

@@ -11,7 +11,8 @@
 /* 10. focus-outline-offset . */  var(--button-focus-outline-offset),
 /* 11. focus-outline-opacity  */  var(--button-focus-outline-opacity),
 /* 12. focus-outline-blur ... */  var(--button-focus-outline-blur),
-/* 13. expand-max ........... */  var(--button-expand-max);
+/* 13. expand-max ........... */  var(--button-expand-max),
+/* 14. shadow ............... */  var(--button-shadow);
 
 @mixin buttonSelectors
 /*  1. button ............... */  .button,
