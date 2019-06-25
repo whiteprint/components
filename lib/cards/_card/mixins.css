@@ -4,35 +4,47 @@
   $border-width,
   $border-color,
   $border-radius,
-  $img-border-width,
-  $img-height,
-  $v-pad,
-  $h-pad,
-  $title-font-size
-  {
+  $inner-border-width,
+  $header-img-height,
+  $gutter,
+  $v-spacing,
+  $section-spacing,
+  $footer-padding,
+  $line-height,
+  $font-family: inherit {
 
   $card-background-color: $background-color;
   $card-text-color: $text-color;
   $card-border-width: $border-width;
   $card-border-color: $border-color;
   $card-border-radius: $border-radius;
-  $card-img-border-width: $img-border-width;
-  $card-img-height: $img-height;
-  $card-v-pad: $v-pad;
-  $card-h-pad: $h-pad;
-  $card-title-font-size: $title-font-size;
+  $card-inner-border-width: $inner-border-width;
+  $card-header-img-height: $header-img-height;
+  $card-gutter: $gutter;
+  $card-v-spacing: $v-spacing;
+  $card-section-spacing: $section-spacing;
+  $card-footer-padding: $footer-padding;
+  $card-line-height: $line-height;
+  $card-font-family: $font-family;
 
   @define-mixin card {
     background-color: $card-background-color;
     color: $card-text-color;
     border: solid $card-border-width $card-border-color;
     border-radius: $card-border-radius;
+    font-family: $card-font-family;
+    line-height: $card-line-height;
+
+    & img {
+      max-width: 100%;
+    }
   }
 
-  @define-mixin cardImage {
-    border-bottom: solid $card-img-border-width $card-border-color;
-    height: $card-img-height;
+  @define-mixin cardHeader {
+    border-bottom: solid $card-inner-border-width $card-border-color;
+    height: $card-header-img-height;
     overflow: hidden;
+    margin-bottom: $card-section-spacing;
 
     & img {
       width: 100%;
@@ -42,41 +54,64 @@
     }
   }
 
-  @define-mixin cardBody {
-    padding: $card-v-pad $card-h-pad;
+  @define-mixin cardSection {
+    padding-left: $card-gutter;
+    padding-right: $card-gutter;
+
+    &:first-child {
+      padding-top: $card-gutter;
+    }
+
+    &:last-child {
+      padding-bottom: $card-gutter;
+    }
+
+    & > *:not(:first-child) {
+      margin-top: $card-v-spacing;
+    }
   }
 
-  @define-mixin cardTitle {
-    font-size: $card-title-font-size;
-    margin: 0.25em 0 0 0;
+  @define-mixin cardSectionSibling {
+    margin-top: $card-section-spacing;
   }
+
+  @define-mixin cardFooter {
+    margin-top: $card-section-spacing;
+    border-top: solid $card-inner-border-width $card-border-color;
+    padding: $card-footer-padding $card-gutter;
+  }
+
 }
 
 @define-mixin cardSelectors
   $card: .card,
-  $card_image: .card_image,
-  $card_body: .card_body,
-  $card_title: .card_title {
+  $card_header: .card_header,
+  $card_section: .card_section,
+  $card_footer: .card_footer {
 
   $card-selector: $card;
-  $card_image-selector: $card_image;
-  $card_body-selector: $card_body;
-  $card_title-selector: $card_title;
+  $card_header-selector: $card_header;
+  $card_section-selector: $card_section;
+  $card_footer-selector: $card_footer;
 
   $card-selector {
     @mixin card;
   }
 
-  $card_image-selector {
-    @mixin cardImage;
+  $card_header-selector {
+    @mixin cardHeader;
   }
 
-  $card_body-selector {
-    @mixin cardBody;
+  $card_section-selector {
+    @mixin cardSection;
+
+    & + $card_section-selector {
+      @mixin cardSectionSibling;
+    }
   }
 
-  $card_title-selector {
-    @mixin cardTitle;
+  $card_footer-selector {
+    @mixin cardFooter;
   }
 
 }

@@ -4,14 +4,17 @@
 /*  3. border width ......... */  var(--card-border-width),
 /*  4. border color ......... */  var(--card-border-color),
 /*  5. border radius ........ */  var(--card-border-radius),
-/*  6. image border width ... */  var(--card-img-border-width),
-/*  7. image min height ..... */  var(--card-img-height),
-/*  8. vertical pad ......... */  var(--card-v-pad),
-/*  9. horizontal pad ....... */  var(--card-h-pad),
-/* 10. title font size ...... */  var(--card-title-font-size);
+/*  6. internal border width  */  var(--card-inner-border-width),
+/*  7. header img min height  */  var(--card-header-img-height),
+/*  8. inset / gutter ....... */  var(--card-gutter),
+/*  9. vertical spacing ..... */  var(--card-v-spacing),
+/* 10. section spacing ...... */  var(--card-section-spacing),
+/* 11. footer padding ....... */  var(--card-footer-padding),
+/* 12. line height .......... */  var(--card-line-height),
+/* 13. font family .......... */  var(--card-font-family);
 
 @mixin cardSelectors
 /*  1. card ................. */  .card,
-/*  2. card image ........... */  .card_image,
-/*  3. card body ............ */  .card_body,
-/*  4. card title ........... */  .card_title;
+/*  2. card header .......... */  .card_header,
+/*  3. card section ......... */  .card_section,
+/*  4. card footer .......... */  .card_footer;

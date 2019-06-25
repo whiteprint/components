@@ -1,0 +1,6 @@
+@mixin textVariables
+/*  1. font size ............ */  var(--text-font-size-9),
+/*  2. font weight .......... */  notset;
+
+@mixin textSelectors
+/*  1. text element.......... */  .text-9;

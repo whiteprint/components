@@ -1,0 +1,27 @@
+@define-mixin textVariables
+  $font-size,
+  $font-weight: inherit {
+
+  $text-font-size: $font-size;
+  $text-font-weight: $font-weight;
+
+  @define-mixin textElement {
+    font-size: $text-font-size;
+
+    @if $text-font-weight != notset {
+      font-weight: $text-font-weight;
+    }
+  }
+
+
+}
+
+@define-mixin textSelectors
+  $text-element {
+
+  $text-element_selector: $text-element;
+
+  $text-element_selector {
+    @mixin textElement;
+  }
+}

@@ -6,9 +6,12 @@
   --card-border-color: var(--component-border-color);
   --card-border-width: var(--component-border-width);
   --card-border-radius: var(--component-border-radius);
-  --card-img-border-width: var(--component-border-width);
-  --card-img-height: 30vh;
-  --card-v-pad: var(--component-h-pad);
-  --card-h-pad: var(--component-h-pad);
-  --card-title-font-size: var(--component-font-size-three);
+  --card-inner-border-width: var(--component-border-width);
+  --card-header-img-height: 30vh;
+  --card-gutter: 2rem;
+  --card-v-spacing: 0.6rem;
+  --card-section-spacing: 2rem;
+  --card-footer-padding: 1rem;
+  --card-line-height: 1.4;
+  --card-font-family: var(--component-font-family);
 }

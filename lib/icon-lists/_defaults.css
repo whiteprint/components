@@ -1,0 +1,9 @@
+@import "../variables.css";
+
+:root {
+  --icon-list-item-spacing: 0.2rem;
+  --icon-list-icon-width: 1.8rem;
+  --icon-list-icon-height: 1.8rem;
+  --icon-list-icon-gap: 0.4em;
+  --icon-list-icon-fill: var(--component-main-color);
+}

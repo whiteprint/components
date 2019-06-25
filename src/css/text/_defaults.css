@@ -1,0 +1,12 @@
+:root {
+  --text-font-size-1: var(--component-font-size-1);
+  --text-font-size-2: var(--component-font-size-2);
+  --text-font-size-3: var(--component-font-size-3);
+  --text-font-size-4: var(--component-font-size-4);
+  --text-font-size-5: var(--component-font-size-5);
+  --text-font-size-6: var(--component-font-size-6);
+  --text-font-size-7: var(--component-font-size-7);
+  --text-font-size-8: var(--component-font-size-8);
+  --text-font-size-9: var(--component-font-size-9);
+  --text-font-size-10: var(--component-font-size-10);
+}

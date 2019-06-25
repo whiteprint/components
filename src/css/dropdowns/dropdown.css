@@ -15,7 +15,8 @@
 /* 14. focus outline color .. */  var(--dropdown-link-focus-outline-color),
 /* 15. active bg color ...... */  var(--dropdown-link-active-bg-color),
 /* 16. active text color .... */  var(--dropdown-link-active-text-color),
-/* 17. active focus color ... */  var(--dropdown-link-active-focus-outline-color);
+/* 17. active focus color ... */  var(--dropdown-link-active-focus-outline-color),
+/* 18. font family .......... */  var(--dropdown-font-family);
 
 @mixin dropdownSelectors
 /*  1. dropdown-content ..... */  .dropdown,

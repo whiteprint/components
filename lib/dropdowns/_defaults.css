@@ -8,6 +8,7 @@
   --dropdown-offset: 1.2em;
   --dropdown-arrow-size: 1em;
   --dropdown-box-shadow: 0px 0px 0px 4px #fff;
+  --dropdown-font-family: var(--component-font-family);
   --dropdown-link-color: inherit;
   --dropdown-link-font-weight: var(--component-font-weight-bold);
   --dropdown-link-focus-outline-width: var(--component-focus-outline-width);

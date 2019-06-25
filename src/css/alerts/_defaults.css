@@ -12,13 +12,13 @@
   --alert-border-right-width: 12px;
   --alert-border-radius: var(--component-border-radius);
   --alert-font-weight: var(--component-font-weight-bold);
-  --alert-font-size: var(--component-font-size-two);
+  --alert-font-size: var(--component-font-size-4);
   --alert-text-color: var(--component-main-color);
-  --alert-heading-font-size: 1.5em;
+  --alert-heading-font-size: var(--component-font-size-6);
   --alert-heading-font-weight: var(--component-font-weight-bold);
   --alert-divider-color: var(--component-border-color);
   --alert-divider-width: 2px;
-  --alert-long-message-font-size: 0.9em;
+  --alert-long-message-font-size: var(--component-font-size-3);
   --alert-long-message-weight: var(--component-font-weight-normal);
   --alert-background-color: var(--component-background-color);
   --alert-icon-width: 2.6em;

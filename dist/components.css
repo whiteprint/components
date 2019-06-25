@@ -5,6 +5,7 @@
     border-width: 4px 12px 4px 12px;
     box-sizing: border-box;
     display: flex;
+    font-family: inherit;
     font-weight: 600;
     background-color: #fff;
     color: #282828;
@@ -73,7 +74,7 @@
         }
 
 .alert_body {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     padding: 0.8em 1em;
     flex-grow: 1;
   }
@@ -100,12 +101,12 @@
     }
 
 .alert_section[data-type="long"] {
-      font-size: 0.9em;
+      font-size: 1rem;
       font-weight: 400;
     }
 
 .alert_heading {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 600;
     padding: 0;
     margin: 0 0 0.5em 0;
@@ -120,7 +121,7 @@
     padding-right: 1em;
     min-height: 2.8rem;
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     font-weight: 600;
     user-select: none;
     box-sizing: border-box;
@@ -210,7 +211,7 @@
     padding-right: 1em;
     min-height: 2.8rem;
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     font-weight: 600;
     user-select: none;
     box-sizing: border-box;
@@ -319,6 +320,60 @@
       }
     }
 
+.card {
+    background-color: #fff;
+    color: #282828;
+    border: solid 4px #282828;
+    border-radius: 0;
+    font-family: inherit;
+    line-height: 1.4;
+  }
+
+.card img {
+      max-width: 100%;
+    }
+
+.card_header {
+    border-bottom: solid 4px #282828;
+    height: 30vh;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+.card_header img {
+      width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+
+.card_section {
+    padding-left: 2rem;
+    padding-right: 2rem
+  }
+
+.card_section:first-child {
+      padding-top: 2rem;
+    }
+
+.card_section:last-child {
+      padding-bottom: 2rem;
+    }
+
+.card_section > *:not(:first-child) {
+      margin-top: 0.6rem;
+    }
+
+.card_section + .card_section {
+      margin-top: 2rem;
+    }
+
+.card_footer {
+    margin-top: 2rem;
+    border-top: solid 4px #282828;
+    padding: 1rem 2rem;
+  }
+
 .dropdown {
       background-color: #282828;
       color: #fff;
@@ -327,6 +382,7 @@
       margin: 0;
       z-index: 1;
       box-shadow: 0px 0px 0px 4px #fff;
+      font-family: inherit;
     }
 
 .dropdown::after {
@@ -393,31 +449,65 @@
       box-shadow: inset 0 0 0 4px rgb(40, 40, 40);
     }
 
-.card {
-    background-color: #fff;
-    color: #282828;
-    border: solid 4px #282828;
-    border-radius: 0;
+.icon-list {
+
   }
 
-.card_image {
-    border-bottom: solid 4px #282828;
-    height: 30vh;
-    overflow: hidden;
+.icon-list_item {
+    display: flex;
   }
 
-.card_image img {
-      width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      object-position: 50% 50%;
+.icon-list_item:not(:first-child) {
+      margin-top: 0.2rem;
     }
 
-.card_body {
-    padding: 1rem 1rem;
+.icon-list_icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 0.4em;
+    transform: translateX(-0.1rem) translateY(-0.3rem);
+    fill: #282828;
   }
 
-.card_title {
-    font-size: 1.4rem;
-    margin: 0.25em 0 0 0;
+.icon-list_text {
+  }
+
+.text-1 {
+    font-size: 0.75rem;
+  }
+
+.text-2 {
+    font-size: 0.875rem;
+  }
+
+.text-3 {
+    font-size: 1rem;
+  }
+
+.text-4 {
+    font-size: 1.125rem;
+  }
+
+.text-5 {
+    font-size: 1.25rem;
+  }
+
+.text-6 {
+    font-size: 1.5rem;
+  }
+
+.text-7 {
+    font-size: 1.875rem;
+  }
+
+.text-8 {
+    font-size: 2.25rem;
+  }
+
+.text-9 {
+    font-size: 3rem;
+  }
+
+.text-10 {
+    font-size: 4rem;
   }

@@ -4,7 +4,7 @@
   --button-bg-color: var(--component-main-color);
   --button-txt-color: var(--component-background-color);
   --button-height: var(--component-input-height);
-  --button-font-size: var(--component-font-size-two);
+  --button-font-size: var(--component-font-size-4);
   --button-font-weight: var(--component-font-weight-bold);
   --button-font-family: var(--component-font-family);
   --button-border-width: var(--component-border-width);

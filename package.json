@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@whiteprint/base": "^0.1.0",
     "@whiteprint/icons": "^0.1.0",
     "@whiteprint/placeholders": "^1.0.0",
     "browser-sync": "^2.26.7",

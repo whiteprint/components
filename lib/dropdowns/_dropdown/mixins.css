@@ -15,7 +15,8 @@
   $link-focus-outline-color,
   $link-active-bg-color,
   $link-active-text-color,
-  $link-active-focus-outline-color {
+  $link-active-focus-outline-color,
+  $font-fmaily {
 
   $dropdown-bg-color: $bg-color;
   $dropdown-text-color: $text-color;
@@ -34,6 +35,7 @@
   $dropdown-link-active-bg-color: $link-active-bg-color;
   $dropdown-link-active-text-color: $link-active-text-color;
   $dropdown-link-active-focus-outline-color: $link-active-focus-outline-color;
+  $dropdown-font-fmaily: $font-fmaily;
 
   @define-mixin dropdownContent {
     background-color: $dropdown-bg-color;
@@ -43,6 +45,7 @@
     margin: 0;
     z-index: 1;
     box-shadow: $dropdown-box-shadow;
+    font-family: $dropdown-font-fmaily;
 
     &::after {
       content: '';

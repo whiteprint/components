@@ -1,0 +1,68 @@
+@define-mixin iconListVariables
+  $item-spacing,
+  $icon-width,
+  $icon-height,
+  $icon-gap,
+  $icon-fill,
+  $icon-offset-x: 0,
+  $icon-offset-y: 0
+  {
+
+  $icon-list-item-spacing: $item-spacing;
+  $icon-list-icon-width: $icon-width;
+  $icon-list-icon-height: $icon-height;
+  $icon-list-icon-gap: $icon-gap;
+  $icon-list-icon-fill: $icon-fill;
+  $icon-list-icon-offset-x: $icon-offset-x;
+  $icon-list-icon-offset-y: $icon-offset-y;
+
+  @define-mixin iconListItem {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: $icon-list-item-spacing;
+    }
+  }
+
+  @define-mixin iconListIcon {
+    width: $icon-list-icon-width;
+    height: $icon-list-icon-height;
+    margin-right: $icon-list-icon-gap;
+    transform: translateX($icon-list-icon-offset-x) translateY($icon-list-icon-offset-y);
+    fill: $icon-list-icon-fill;
+  }
+
+  @define-mixin iconListText {
+
+  }
+
+}
+
+/* structure */
+@define-mixin iconListSelectors
+  $icon-list,
+  $icon-list_item,
+  $icon-list_icon,
+  $icon-list_text {
+
+  $icon-list_selector: $icon-list;
+  $icon-list_item_selector: $icon-list_item;
+  $icon-list_icon_selector: $icon-list_icon;
+  $icon-list_text_selector: $icon-list_text;
+
+  $icon-list_selector {
+
+  }
+
+  $icon-list_item_selector {
+    @mixin iconListItem;
+  }
+
+  $icon-list_icon_selector {
+    @mixin iconListIcon;
+  }
+
+  $icon-list_text_selector {
+    @mixin iconListText;
+  }
+}
