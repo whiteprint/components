@@ -1,16 +1,16 @@
 {
   "name": "@whiteprint/components",
-  "version": "0.2.0",
-  "description": "Components for Whiteprint, front-end component library",
+  "version": "0.2.1",
+  "description": "Components for Whiteprint, CSS framework",
   "author": {
     "name": "Sam Smith",
     "url": "https://smth.uk"
   },
   "license": "MIT",
   "devDependencies": {
-    "@whiteprint/base": "^0.1.0",
+    "@whiteprint/base": "^0.1.1",
     "@whiteprint/icons": "^0.1.0",
-    "@whiteprint/placeholders": "^1.0.0",
+    "@whiteprint/placeholders": "^0.1.1",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
