@@ -1,0 +1,14 @@
+@mixin navVariables
+/*  1. bg color ............ */ var(--component-main-color),
+/*  2. link color .......... */ white,
+/*  3. link bg ............. */ var(--component-main-color),
+/*  4. link border width ... */ 0,
+/*  5. link border color ... */ var(--component-main-color),
+/*  3. link h padding ...... */ 1em,
+/*  4. link v padding ...... */ 0.5em,
+/*  5. horizontal at ....... */ var(--nav-break-point);
+
+@mixin navSelectors
+/*  1. container ........... */ .top-nav,
+/*  2. logo ................ */ .top-nav_item,
+/*  3. content ............. */ .top-nav_link;

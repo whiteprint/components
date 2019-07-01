@@ -1,0 +1,13 @@
+@mixin mediaObjectVariables
+/*  1. media image width .... */  var(--media-object-image-width),
+/*  2. media image height ... */  var(--media-object-image-height),
+/*  3. media gap ............ */  var(--media-object-gap),
+/*  4. media radius ......... */  var(--media-object-image-radius),
+/*  5. vertical spacing ..... */  var(--media-v-gap);
+
+@mixin mediaObjectSelectors
+/*  1. media object.......... */  .comment,
+/*  2. media image .......... */  .comment_avatar,
+/*  3. media text ........... */  .comment_text,
+/*  4. first line ........... */  .comment_name,
+/*  5. additional lines ..... */  .comment_content;

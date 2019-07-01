@@ -1,0 +1,21 @@
+@mixin barVariables
+/*  1. bg colour ........... */ var(--bar-bg-color),
+/*  2. text colour ......... */ var(--bar-text-color),
+/*  3. h padding ........... */ 1rem,
+/*  4. v padding ........... */ 1rem,
+/*  5. toggle width ........ */ 2rem,
+/*  6. toggle height ....... */ 2rem,
+/*  7. toggle padding ...... */ 0,
+/*  8. toggle bg ........... */ var(--bar-bg-color),
+/*  9. toggle color ........ */ white,
+/* 10. toggle border width . */ 0,
+/* 11. toggle border color . */ var(--bar-bg-color),
+/* 12. inner max width ..... */ 1170px,
+/* 13. break point ......... */ var(--bar-break-point);
+
+@mixin barSelectors
+/*  1. container ........... */ .top-bar,
+/*  2. inner ............... */ .top-bar_inner,
+/*  3. logo ................ */ .top-bar_logo,
+/*  4. content ............. */ .top-bar_content,
+/*  5. toggle .............. */ .top-bar_toggle;

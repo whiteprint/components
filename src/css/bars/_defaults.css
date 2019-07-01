@@ -1,0 +1,7 @@
+@import "../variables.css";
+
+:root {
+  --bar-bg-color: var(--component-main-color);
+  --bar-text-color: var(--component-background-color);
+  --bar-break-point: var(--component-for-tablet-portrait);
+}

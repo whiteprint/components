@@ -19,4 +19,6 @@
   --dropdown-link-active-bg-color: var(--component-background-color);
   --dropdown-link-active-text-color: var(--dropdown-bg-color);
   --dropdown-link-active-focus-outline-color: var(--dropdown-bg-color);
+  --dropdown-group-border-width: var(--component-border-width);
+  --dropdown-group-border-color: var(--component-background-color);
 }

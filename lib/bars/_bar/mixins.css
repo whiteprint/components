@@ -1,0 +1,112 @@
+@define-mixin barVariables
+  $bg-color,
+  $text-color,
+  $h-padding,
+  $v-padding,
+  $toggle-width,
+  $toggle-height,
+  $toggle-padding,
+  $toggle-bg,
+  $toggle-color,
+  $toggle-border-width,
+  $toggle-border-color,
+  $max-width: 100%,
+  $break-point: 0px {
+
+  $bar-bg-color: $bg-color;
+  $bar-text-color: $text-color;
+  $bar-h-padding: $h-padding;
+  $bar-v-padding: $v-padding;
+  $bar-toggle-width: $toggle-width;
+  $bar-toggle-height: $toggle-height;
+  $bar-toggle-padding: $toggle-padding;
+  $bar-toggle-bg: $toggle-bg;
+  $bar-toggle-color: $toggle-color;
+  $bar-toggle-border-width: $toggle-border-width;
+  $bar-toggle-border-color: $toggle-border-color;
+  $bar-max-width: $max-width;
+  $bar-break-point: $break-point;
+
+  @define-mixin barContainer {
+    background-color: $bar-bg-color;
+    color: $bar-text-color;
+  }
+
+  @define-mixin barInner {
+    max-width: $bar-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: $bar-v-padding $bar-h-padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @define-mixin barLogo {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @define-mixin barContent {
+    display: none;
+
+    @media (min-width: $bar-break-point) {
+      display: flex;
+    }
+  }
+
+  @define-mixin barToggle {
+    background: $bar-toggle-bg;
+    fill: $bar-toggle-color;
+    border: solid $bar-toggle-border-width $bar-toggle-border-color;
+    width: $bar-toggle-width;
+    height: $bar-toggle-height;
+    padding: $bar-toggle-padding;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (min-width: $bar-break-point) {
+      display: none;
+    }
+  }
+
+}
+
+
+@define-mixin barSelectors
+  $selector: .bar,
+  $inner_selector: .bar_inner,
+  $logo_selector: .bar_logo,
+  $content_selector: .bar_content,
+  $toggle_selector: .bar_toggle {
+
+  $bar_selector: $selector;
+  $bar-inner_selector: $inner_selector;
+  $bar-logo_selector: $logo_selector;
+  $bar-content_selector: $content_selector;
+  $bar-toggle_selector: $toggle_selector;
+
+  $bar_selector {
+    @mixin barContainer;
+  }
+
+  $bar-inner_selector {
+    @mixin barInner;
+  }
+
+  $bar-logo_selector {
+    @mixin barLogo;
+  }
+
+  $bar-content_selector {
+    @mixin barContent;
+  }
+
+  $bar-toggle_selector {
+    @mixin barToggle;
+  }
+
+}

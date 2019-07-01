@@ -343,13 +343,7 @@
       background-size: 31.11px 31.11px;
     }
     
-    h1.placeholder,
-    h2.placeholder,
-    h3.placeholder,
-    h4.placeholder,
-    h5.placeholder,
-    h6.placeholder,
-    p.placeholder {
+    *:not(img).placeholder {
       word-break: break-all;
       letter-spacing: -0.5em;
       overflow: hidden;
@@ -493,22 +487,169 @@
     </ul>
     
   </div>
+  <div class="component">
+    <div class="comment">
+      <div class="comment_avatar">
+        <img class="placeholder" alt="">
+      </div>
+      <div class="comment_text">
+        <div class="comment_name">
+          <strong>Sam</strong> <a class="text-meta">1 day ago</a>
+        </div>
+        <div class="comment_content">
+          <p>
+            This is a comment.
+          </p>
+        </div>
+        <ul class="comment_content">
+          <li>
+            icon
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  <div class="component">
+    <div class="event">
+      <div class="event_avatar">
+        <img class="placeholder" alt="">
+      </div>
+      <div class="event_text">
+        <div class="event_content">
+          <strong>Emma</strong>  wants to be your friend <a class="text-meta">1 hour ago</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="component">
+    <div class="top-bar">
+      <div class="top-bar_inner">
+        <a class="top-bar_logo placeholder" href="#">My logo</a>
+        <div>
+    
+          <button class="top-bar_toggle">
+            <svg><use xlink:href="#menu" /></svg>
+          </button>
+          <div class="top-bar_content">
+            <!-- <form class="search">
+              <input type="search" placeholder="Search" class="input">
+            </form> -->
+    
+            <ul class="top-nav">
+              <li>
+                <button class="top-nav_link" id="nav-dropdown-1" aria-haspopup="true">Notifications <use xlink:href="#caret-down" /></svg></button>
+    
+                <ul class="dropdown" aria-labelledby="nav-dropdown-1">
+                  <li>
+                    <a href="#" class="dropdown_link">
+                      <div class="event">
+                        <div class="event_avatar">
+                          <img class="placeholder" alt="">
+                        </div>
+                        <div class="event_text">
+                          <div class="event_content">
+                            <strong>Paul</strong>  wants to be your friend  <span class="text-meta">1 hour ago</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown_link">
+                      <div class="event">
+                        <div class="event_avatar">
+                          <img class="placeholder" alt="">
+                        </div>
+                        <div class="event_text">
+                          <div class="event_content">
+                            <strong>Nigel</strong> accepted your friend request <span class="text-meta">2 hours ago</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown_link">
+                      <div class="event">
+                        <div class="event_avatar">
+                          <img class="placeholder" alt="">
+                        </div>
+                        <div class="event_text">
+                          <div class="event_content">
+                            <strong>Mor</strong> commented on your post <span class="text-meta">1 week ago</span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="dropdown_item" data-group-item="1">
+                    <a href="#" class="dropdown_link">See all</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="top-nav_link" href="#">Help</a>
+              </li>
+              <li>
+                <button class="top-nav_link" id="nav-dropdown-2" aria-haspopup="true">Sam Smith <use xlink:href="#caret-down" /></svg></button>
+    
+                <ul class="dropdown" aria-labelledby="nav-dropdown-2">
+                  <li>
+                    <a href="#" class="dropdown_link">Profile</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown_link">Settings</a>
+                  </li>
+                  <li class="dropdown_item" data-group-item="1">
+                    <a href="#" class="dropdown_link">Logout</a>
+                  </li>
+                </ul>
+    
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 
   <div style="display: none">
-    <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 56 56" id="caret-down" xmlns="http://www.w3.org/2000/svg"><path d="M38 25L28 35 18 25h20z"/></symbol><symbol viewBox="0 0 56 56" id="cross" xmlns="http://www.w3.org/2000/svg"><path d="M11.48 37.926l25.964-25.965 7.071 7.071L18.55 44.997z"/><path d="M11.48 19.032l7.07-7.07 25.965 25.964-7.07 7.071z"/></symbol><symbol viewBox="0 0 56 56" id="exclamation" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h12l-1 26H23L22 7z"/><circle cx="28" cy="43" r="6"/></symbol><symbol viewBox="0 0 56 56" id="person" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="18" r="11"/><path d="M18.65 32h19.7A10.65 10.65 0 0 1 49 42.65V49H8v-6.35A10.65 10.65 0 0 1 18.65 32z"/></symbol><symbol viewBox="0 0 56 56" id="tick" xmlns="http://www.w3.org/2000/svg"><path d="M16.39 37.963l25.965-25.965 7.07 7.07-25.964 25.966z"/><path d="M8.004 29.563l7.07-7.071L30.54 37.956l-7.07 7.071z"/></symbol></svg>
+    <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 56 56" id="caret-down" xmlns="http://www.w3.org/2000/svg"><path d="M38 25L28 35 18 25h20z"/></symbol><symbol viewBox="0 0 56 56" id="cross" xmlns="http://www.w3.org/2000/svg"><path d="M11.48 37.926l25.964-25.965 7.071 7.071L18.55 44.997z"/><path d="M11.48 19.032l7.07-7.07 25.965 25.964-7.07 7.071z"/></symbol><symbol viewBox="0 0 56 56" id="exclamation" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h12l-1 26H23L22 7z"/><circle cx="28" cy="43" r="6"/></symbol><symbol viewBox="0 0 56 56" id="menu" xmlns="http://www.w3.org/2000/svg"><path d="M0 23h56v10H0zM0 3.17h56v10H0zM0 43h56v10H0z"/></symbol><symbol viewBox="0 0 56 56" id="person" xmlns="http://www.w3.org/2000/svg"><circle cx="28" cy="18" r="11"/><path d="M18.65 32h19.7A10.65 10.65 0 0 1 49 42.65V49H8v-6.35A10.65 10.65 0 0 1 18.65 32z"/></symbol><symbol viewBox="0 0 56 56" id="tick" xmlns="http://www.w3.org/2000/svg"><path d="M16.39 37.963l25.965-25.965 7.07 7.07-25.964 25.966z"/><path d="M8.004 29.563l7.07-7.071L30.54 37.956l-7.07 7.071z"/></symbol></svg>
   </div>
 
   <script src="./components.js"></script>
 
   <script>
+    // Whiteprint placeholders
+    // Sam Smith, 2019
     var p = document.querySelectorAll(".placeholder");
     var i;
+    // for every placeholder class
     for (i = 0; i < p.length; i++) {
       if (p[i].nodeName == "IMG") {
-        p[i].src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+        // if its on an img
+        // check for aspect ratio
+        var r = p[i].getAttribute("data-ratio");
+        // replace with transparent pixel
+        if (r == "3:2") {
+          p[i].src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=";
+        } else if (r == "2:3") {
+          p[i].src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAADCAQAAAAT4xYKAAAADklEQVR42mNkAAJGOAEAAC0ABNxMS2YAAAAASUVORK5CYII=";
+        } else {
+          // 1x1
+          p[i].src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+        }
+        // replace alt text
+        p[i].alt="Placeholder image."
       } else {
+        // else, presumed text
+        // replace characters with block
         p[i].innerHTML = p[i].innerHTML.replace(/[^]/gi, '▆');
-        p[i].setAttribute("aria-hidden", "true");
+        // don't read that text
+        p[i].setAttribute("aria-label", "Placeholder text.");
       }
     }
     

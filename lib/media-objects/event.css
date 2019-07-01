@@ -1,0 +1,13 @@
+@mixin mediaObjectVariables
+/*  1. media image width .... */  2.5rem,
+/*  2. media image height ... */  2.5rem,
+/*  3. media gap ............ */  var(--media-object-gap),
+/*  4. media radius ......... */  var(--media-object-image-radius),
+/*  5. vertical spacing ..... */  var(--media-v-gap);
+
+@mixin mediaObjectSelectors
+/*  1. media object.......... */  .event,
+/*  2. media image .......... */  .event_avatar,
+/*  3. media text ........... */  .event_text,
+/*  4. first line ........... */  .event_content,
+/*  5. additional lines ..... */  none;

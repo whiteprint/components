@@ -9,7 +9,7 @@
   "license": "MIT",
   "devDependencies": {
     "@whiteprint/base": "^0.1.1",
-    "@whiteprint/icons": "^0.1.0",
+    "@whiteprint/icons": "^0.1.1",
     "@whiteprint/placeholders": "^0.1.1",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.0",

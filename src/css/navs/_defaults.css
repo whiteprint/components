@@ -1,0 +1,5 @@
+@import "../variables.css";
+
+:root {
+  --nav-break-point: var(--component-for-tablet-portrait);
+}

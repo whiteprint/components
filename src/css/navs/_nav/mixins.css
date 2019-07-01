@@ -1,0 +1,60 @@
+@define-mixin navVariables
+  $bg-color,
+  $text-color,
+  $link-bg-color,
+  $link-border-width,
+  $link-border-color,
+  $link-h-pad,
+  $link-v-pad,
+  $break-point: 0px {
+
+  $nav-bg-color: $bg-color;
+  $nav-text-color: $text-color;
+  $nav-link-bg-color: $link-bg-color;
+  $nav-link-border-width: $link-border-width;
+  $nav-link-border-color: $link-border-color;
+  $nav-link-h-pad: $link-h-pad;
+  $nav-link-v-pad: $link-v-pad;
+  $nav-break-point: $break-point;
+
+  @define-mixin navContainer {
+    display: block;
+    background-color: $nav-bg-color;
+    color: $nav-text-color;
+
+    @media (min-width: $nav-break-point) {
+      display: flex;
+    }
+  }
+
+  @define-mixin navLink {
+    display: block;
+    padding: $nav-link-v-pad $nav-link-h-pad;
+    text-decoration: none;
+    color: inherit;
+    background-color: $nav-link-bg-color;
+    border: solid $nav-link-border-width $nav-link-border-color;
+  }
+
+}
+
+
+/* structure */
+@define-mixin navSelectors
+  $selector: .nav,
+  $item_selector: .nav_item,
+  $link_selector: .nav_link {
+
+  $nav_selector: $selector;
+  $nav-item_selector: $item_selector;
+  $nav-link_selector: $link_selector;
+
+  $nav_selector {
+    @mixin navContainer;
+  }
+
+  $nav-link_selector {
+    @mixin navLink;
+  }
+
+}

@@ -1,0 +1,9 @@
+@import "../variables.css";
+
+:root {
+  --media-object-image-width: 3rem;
+  --media-object-image-height: 3rem;
+  --media-object-image-radius: 0;
+  --media-object-gap: 1rem;
+  --media-v-gap: 0.5rem;
+}

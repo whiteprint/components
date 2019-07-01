@@ -16,6 +16,8 @@
   $link-active-bg-color,
   $link-active-text-color,
   $link-active-focus-outline-color,
+  $group-border-width,
+  $group-border-color,
   $font-fmaily {
 
   $dropdown-bg-color: $bg-color;
@@ -35,6 +37,8 @@
   $dropdown-link-active-bg-color: $link-active-bg-color;
   $dropdown-link-active-text-color: $link-active-text-color;
   $dropdown-link-active-focus-outline-color: $link-active-focus-outline-color;
+  $dropdown-group-border-width: $group-border-width;
+  $dropdown-group-border-color: $group-border-color;
   $dropdown-font-fmaily: $font-fmaily;
 
   @define-mixin dropdownContent {
@@ -46,6 +50,7 @@
     z-index: 1;
     box-shadow: $dropdown-box-shadow;
     font-family: $dropdown-font-fmaily;
+    display: block;
 
     &::after {
       content: '';
@@ -58,7 +63,8 @@
     }
 
     &[aria-hidden="true"] {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
     }
 
     &[x-placement="bottom-start"] {
@@ -112,14 +118,22 @@
     }
   }
 
+  @define-mixin dropdownNewGroup {
+    border-top: solid $dropdown-group-border-width $dropdown-group-border-color;
+  }
+
 
   /* structure */
   @define-mixin dropdownSelectors
     $selector: .dropdown,
+    $item-selector: .dropdown_item,
+    $group-modifier: [data-group-item="1"],
     $link-selector: .dropdown_link,
     $active: [aria-current] {
 
     $dropdown-selector: $selector;
+    $dropdown_item-selector: $item-selector;
+    $dropdown-group-modifier: $group-modifier;
     $dropdown_link-selector: $link-selector;
     $dropdown-active-modifier: $active;
 
@@ -133,6 +147,13 @@
 
       &$dropdown-active-modifier {
         @mixin dropdownContentLinkActiveModifier;
+      }
+    }
+
+    $dropdown_item-selector {
+      
+      &$group-modifier {
+        @mixin dropdownNewGroup;
       }
     }
 

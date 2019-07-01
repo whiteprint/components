@@ -16,9 +16,13 @@
 /* 15. active bg color ...... */  var(--dropdown-link-active-bg-color),
 /* 16. active text color .... */  var(--dropdown-link-active-text-color),
 /* 17. active focus color ... */  var(--dropdown-link-active-focus-outline-color),
-/* 18. font family .......... */  var(--dropdown-font-family);
+/* 18. group border width ... */  var(--dropdown-group-border-width),
+/* 19. group border color ... */  var(--dropdown-group-border-color),
+/* 20. font family .......... */  var(--dropdown-font-family);
 
 @mixin dropdownSelectors
 /*  1. dropdown-content ..... */  .dropdown,
-/*  2. dropdown_link ........ */  .dropdown_link,
-/*  3. link-active-modifier . */  [aria-current];
+/*  2. dropdown item ........ */  .dropdown_item,
+/*  3. new group modifier ... */  [data-group-item="1"],
+/*  4. dropdown_link ........ */  .dropdown_link,
+/*  5. link-active-modifier . */  [aria-current];
