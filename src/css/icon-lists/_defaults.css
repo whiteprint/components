@@ -1,5 +1,4 @@
-@import "../variables.css";
-
+/* Components: Icon list */
 :root {
   --icon-list-item-spacing: 0.2rem;
   --icon-list-icon-width: 1.8rem;

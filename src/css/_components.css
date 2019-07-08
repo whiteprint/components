@@ -1,49 +1,42 @@
-@import "../../lib/alerts/_defaults";
-@import "../../lib/alerts/_alert";
-@import "../../lib/alerts/alert.css";
+@import "variables.css";
 
-@import "../../lib/bars/_defaults";
-@import "../../lib/bars/_bar";
-@import "../../lib/bars/top-bar.css";
+@import "alerts/_alert";
+@import "alerts/alert.css";
 
-@import "../../lib/buttons/_defaults";
-@import "../../lib/buttons/_button";
-@import "../../lib/buttons/button.css";
-@import "../../lib/buttons/button-primary.css";
-@import "../../lib/buttons/_button-group";
-@import "../../lib/buttons/button-group.css";
+@import "bars/_bar";
+@import "bars/top-bar.css";
 
-@import "../../lib/cards/_defaults";
-@import "../../lib/cards/_card";
-@import "../../lib/cards/card.css";
+@import "buttons/_button";
+@import "buttons/button.css";
+@import "buttons/button-primary.css";
+@import "buttons/_button-group";
+@import "buttons/button-group.css";
 
-@import "../../lib/dropdowns/_defaults";
-@import "../../lib/dropdowns/_dropdown";
-@import "../../lib/dropdowns/dropdown.css";
+@import "cards/_card";
+@import "cards/card.css";
 
-@import "../../lib/icon-lists/_defaults";
-@import "../../lib/icon-lists/_icon-list";
-@import "../../lib/icon-lists/icon-list.css";
+@import "dropdowns/_dropdown";
+@import "dropdowns/dropdown.css";
 
-@import "../../lib/media-objects/_defaults";
-@import "../../lib/media-objects/_media-object";
-@import "../../lib/media-objects/comment.css";
-@import "../../lib/media-objects/event.css";
+@import "icon-lists/_icon-list";
+@import "icon-lists/icon-list.css";
 
-@import "../../lib/navs/_defaults";
-@import "../../lib/navs/_nav";
-@import "../../lib/navs/top-nav.css";
+@import "media-objects/_media-object";
+@import "media-objects/comment.css";
+@import "media-objects/event.css";
 
-@import "../../lib/text/_defaults";
-@import "../../lib/text/_text";
-@import "../../lib/text/text-1.css";
-@import "../../lib/text/text-2.css";
-@import "../../lib/text/text-3.css";
-@import "../../lib/text/text-4.css";
-@import "../../lib/text/text-5.css";
-@import "../../lib/text/text-6.css";
-@import "../../lib/text/text-7.css";
-@import "../../lib/text/text-8.css";
-@import "../../lib/text/text-9.css";
-@import "../../lib/text/text-10.css";
-@import "../../lib/text/text-meta.css";
+@import "navs/_nav";
+@import "navs/top-nav.css";
+
+@import "text/_text";
+@import "text/text-1.css";
+@import "text/text-2.css";
+@import "text/text-3.css";
+@import "text/text-4.css";
+@import "text/text-5.css";
+@import "text/text-6.css";
+@import "text/text-7.css";
+@import "text/text-8.css";
+@import "text/text-9.css";
+@import "text/text-10.css";
+@import "text/text-meta.css";

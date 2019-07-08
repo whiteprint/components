@@ -1,5 +1,4 @@
-@import "../variables.css";
-
+/* Components: Media objects */
 :root {
   --media-object-image-width: 3rem;
   --media-object-image-height: 3rem;

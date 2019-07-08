@@ -1,5 +1,4 @@
-@import "../variables.css";
-
+/* Components: Cards */
 :root {
   --card-background-color: var(--component-background-color);
   --card-text-color: var(--component-main-color);

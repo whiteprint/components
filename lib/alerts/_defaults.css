@@ -1,5 +1,4 @@
-@import "../variables.css";
-
+/* Components: Alerts */
 :root {
   --alert-font-family: var(--component-font-family);
   --alert-border-top-color: var(--component-border-color);

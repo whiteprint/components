@@ -1,6 +1,6 @@
 {
   "name": "@whiteprint/components",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Components for Whiteprint, CSS framework",
   "author": {
     "name": "Sam Smith",
@@ -12,25 +12,27 @@
     "@whiteprint/icons": "^0.1.1",
     "@whiteprint/placeholders": "^0.1.1",
     "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-preprocess": "^3.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-strip-comments": "^2.5.2",
-    "popper.js": "^1.15.0",
+    "postcss-custom-selectors": "^5.1.2",
     "rollup": "^1.2.2",
     "rollup-plugin-cleanup": "^3.1.1",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-jscc": "^1.0.0",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^5.0.0",
     "rollup-stream": "^1.24.1"
   },
   "dependencies": {
+    "popper.js": "^1.15.0",
     "postcss-advanced-variables": "^3.0.0",
     "postcss-calc": "^7.0.1",
-    "postcss-color-function": "^4.0.1",
+    "postcss-color-function": "^4.1.0",
     "postcss-custom-properties": "^8.0.9",
-    "postcss-custom-selectors": "^5.1.2",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.1",
     "postcss-nesting": "^7.0.0"

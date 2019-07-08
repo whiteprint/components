@@ -3,6 +3,7 @@ const rollup = require('rollup');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const cleanup  = require('rollup-plugin-cleanup');
+const { terser }  = require('rollup-plugin-terser');
 const jscc = require('rollup-plugin-jscc');
 const postcss = require('gulp-postcss');
 const preprocess = require("gulp-preprocess");
@@ -10,6 +11,33 @@ const stripComments = require('gulp-strip-comments');
 const rename = require("gulp-rename");
 const browserSync = require('browser-sync').create();
 const selectors = require('./selectors.js');
+const postcssImport = require('postcss-import');
+const postcssCustomSelectors = require('postcss-custom-selectors');
+const postcssCustomProperties = require('postcss-custom-properties');
+const postcssAdvancedVariables = require('postcss-advanced-variables');
+
+
+var fullCSSconfig = [
+  postcssImport(),
+  require('postcss-mixins'),
+  postcssCustomSelectors({
+    exportTo: 'selectors.js'
+  }),
+  postcssCustomProperties({
+    preserve: false
+  }),
+  postcssAdvancedVariables({
+    disable: '@mixin, @include, @content, @import'
+  }),
+  require('postcss-color-function'),
+  require('postcss-calc'),
+  require('postcss-nesting'),
+  require('cssnano')
+];
+
+var varsCSSconfig = [
+  postcssImport()
+];
 
 
 // process HTML
@@ -47,12 +75,20 @@ gulp.task('css:vars', function(done) {
     done();
 });
 
+gulp.task('postcss:vars', function (done) {
+  return gulp.src('./src/css/variables.css')
+    .pipe(postcss(varsCSSconfig))
+    .pipe(gulp.dest('./lib/'));
+    done();
+});
+
 // process CSS
-gulp.task('postcss', function () {
+gulp.task('postcss', function (done) {
   return gulp.src('./src/css/_components.css')
-    .pipe(postcss())
+    .pipe(postcss(fullCSSconfig))
     .pipe(rename("components.css"))
     .pipe(gulp.dest('./dist'));
+    done();
 });
 
 // process JS
@@ -60,8 +96,14 @@ gulp.task('buttons:js', () => {
   return rollup.rollup({
     input: './src/js/buttons/buttons.js',
     plugins: [
+      jscc({
+        values: {
+          _SEL: selectors.customSelectors,
+          _SEP: ", "
+        },
+      }),
       commonjs(),
-      cleanup({ comments: [/^\/#/] }) // preserve jscc
+      cleanup()
     ]
   }).then(bundle => {
     return bundle.write({
@@ -74,7 +116,13 @@ gulp.task('dropdowns:js', () => {
   return rollup.rollup({
     input: './src/js/dropdowns/dropdowns.js',
     plugins: [
-      cleanup({ comments: [/^\/#/] }) // preserve jscc
+      jscc({
+        values: {
+          _SEL: selectors.customSelectors,
+          _SEP: ", "
+        },
+      }),
+      cleanup()
     ]
   }).then(bundle => {
     return bundle.write({
@@ -87,14 +135,8 @@ gulp.task('components:js', () => {
   return rollup.rollup({
     input: './src/js/_components.js',
     plugins: [
-      jscc({
-        values: {
-          _SEL: selectors.customSelectors,
-          _SEP: ", "
-        },
-      }),
       resolve(),
-      cleanup()
+      terser()
     ]
   }).then(bundle => {
     return bundle.write({
@@ -123,12 +165,17 @@ gulp.task('reload', function(done) {
 // watching
 gulp.task('watch:css', function() {
   return gulp.watch(['./src/css/**/*.css'],
-  gulp.series(gulp.parallel('css:core', 'css:component', 'css:vars')));
+  gulp.series(gulp.parallel('css:core', 'css:component')));
 });
 
 gulp.task('watch:postcss', function() {
-  return gulp.watch(['./lib/**/*.css', './src/css/_components.css'],
+  return gulp.watch(['./src/css/variables.css', './src/css/**/*.css', './src/css/_components.css'],
   gulp.series('postcss'));
+});
+
+gulp.task('watch:vars', function() {
+  return gulp.watch(['./src/css/_vars.css', './src/css/variables.css'],
+  gulp.series('postcss:vars'));
 });
 
 gulp.task('watch:html', function() {
@@ -146,7 +193,7 @@ gulp.task('watch:dist', function() {
   gulp.series('reload'));
 });
 
-gulp.task('watch', gulp.parallel('watch:css', 'watch:postcss', 'watch:html', 'watch:js', 'watch:dist'));
+gulp.task('watch', gulp.parallel('watch:css', 'watch:postcss', 'watch:html', 'watch:js', 'watch:dist', 'watch:vars'));
 
 // deafult task
 gulp.task('default', gulp.parallel('watch', 'server'));

@@ -1,3 +1,4 @@
+/* Components */
 :root {
   --component-emphasis-primary: #0000EE;
   --component-main-color: #282828;
@@ -27,4 +28,130 @@
   --component-v-pad: 0.8rem;
   --component-h-pad: 1rem;
   --component-drop-shadow: 0px 0px 0px 4px #fff;
+}
+/* Components: Alerts */
+:root {
+  --alert-font-family: var(--component-font-family);
+  --alert-border-top-color: var(--component-border-color);
+  --alert-border-bottom-color: var(--component-border-color);
+  --alert-border-left-color: var(--component-border-color);
+  --alert-border-right-color: var(--component-border-color);
+  --alert-border-top-width: var(--component-border-width);
+  --alert-border-bottom-width: var(--component-border-width);
+  --alert-border-left-width: 12px;
+  --alert-border-right-width: 12px;
+  --alert-border-radius: var(--component-border-radius);
+  --alert-font-weight: var(--component-font-weight-bold);
+  --alert-font-size: var(--component-font-size-4);
+  --alert-text-color: var(--component-main-color);
+  --alert-heading-font-size: var(--component-font-size-6);
+  --alert-heading-font-weight: var(--component-font-weight-bold);
+  --alert-divider-color: var(--component-border-color);
+  --alert-divider-width: 2px;
+  --alert-long-message-font-size: var(--component-font-size-3);
+  --alert-long-message-weight: var(--component-font-weight-normal);
+  --alert-background-color: var(--component-background-color);
+  --alert-icon-width: 2.6em;
+  --alert-icon-background-color: var(--component-border-color);
+  --alert-icon-color: var(--component-background-color);
+  --alert-icon-padding-top: 0.2em;
+  --alert-shadow: none;
+}
+/* Components: Bars */
+:root {
+  --bar-bg-color: var(--component-main-color);
+  --bar-text-color: var(--component-background-color);
+  --bar-break-point: var(--component-for-tablet-portrait);
+}
+/* Components: Buttons */
+:root {
+  --button-bg-color: var(--component-main-color);
+  --button-txt-color: var(--component-background-color);
+  --button-height: var(--component-input-height);
+  --button-font-size: var(--component-font-size-4);
+  --button-font-weight: var(--component-font-weight-bold);
+  --button-font-family: var(--component-font-family);
+  --button-border-width: var(--component-border-width);
+  --button-border-radius: var(--component-border-radius);
+  --button-focus-outline-width: var(--component-focus-outline-width);
+  --button-focus-outline-offset: var(--component-focus-outline-offset);
+  --button-focus-outline-opacity: var(--component-focus-outline-opacity);
+  --button-focus-outline-blur: var(--component-focus-outline-blur);
+  --button-group-gap: var(--button-focus-outline-offset);
+  --button-expand-max: var(--component-for-tablet-portrait);
+  --button-emphasis-primary: var(--component-emphasis-primary);
+  --button-shadow: none;
+}
+/* Components: Cards */
+:root {
+  --card-background-color: var(--component-background-color);
+  --card-text-color: var(--component-main-color);
+  --card-border-color: var(--component-border-color);
+  --card-border-width: var(--component-border-width);
+  --card-border-radius: var(--component-border-radius);
+  --card-inner-border-width: var(--component-border-width);
+  --card-header-img-height: 30vh;
+  --card-gutter: 2rem;
+  --card-v-spacing: 0.6rem;
+  --card-section-spacing: 2rem;
+  --card-footer-padding: 1rem;
+  --card-line-height: 1.4;
+  --card-font-family: var(--component-font-family);
+  --card-shadow: none;
+}
+/* Components: Dropdowns */
+:root {
+  --dropdown-bg-color: var(--component-main-color);
+  --dropdown-text-color: var(--component-background-color);
+  --dropdown-border-width: var(--component-border-width);
+  --dropdown-border-color: var(--component-border-color);
+  --dropdown-offset: 1.2em;
+  --dropdown-arrow-size: 1em;
+  --dropdown-box-shadow: var(--component-drop-shadow);
+  --dropdown-font-family: var(--component-font-family);
+  --dropdown-link-color: inherit;
+  --dropdown-link-font-weight: var(--component-font-weight-bold);
+  --dropdown-link-focus-outline-width: var(--component-focus-outline-width);
+  --dropdown-link-focus-outline-offset: 0;
+  --dropdown-link-focus-outline-blur: var(--component-focus-outline-blur);
+  --dropdown-link-focus-outline-opacity: var(--component-focus-outline-opacity);
+  --dropdown-link-focus-outline-color: var(--dropdown-text-color);
+  --dropdown-link-active-bg-color: var(--component-background-color);
+  --dropdown-link-active-text-color: var(--dropdown-bg-color);
+  --dropdown-link-active-focus-outline-color: var(--dropdown-bg-color);
+  --dropdown-group-border-width: var(--component-border-width);
+  --dropdown-group-border-color: var(--component-background-color);
+}
+/* Components: Icon list */
+:root {
+  --icon-list-item-spacing: 0.2rem;
+  --icon-list-icon-width: 1.8rem;
+  --icon-list-icon-height: 1.8rem;
+  --icon-list-icon-gap: 0.4em;
+  --icon-list-icon-fill: var(--component-main-color);
+}
+/* Components: Media objects */
+:root {
+  --media-object-image-width: 3rem;
+  --media-object-image-height: 3rem;
+  --media-object-image-radius: 0;
+  --media-object-gap: 1rem;
+  --media-v-gap: 0.5rem;
+}
+/* Components: Navs */
+:root {
+  --nav-break-point: var(--component-for-tablet-portrait);
+}
+/* Components: Text */
+:root {
+  --text-font-size-1: var(--component-font-size-1);
+  --text-font-size-2: var(--component-font-size-2);
+  --text-font-size-3: var(--component-font-size-3);
+  --text-font-size-4: var(--component-font-size-4);
+  --text-font-size-5: var(--component-font-size-5);
+  --text-font-size-6: var(--component-font-size-6);
+  --text-font-size-7: var(--component-font-size-7);
+  --text-font-size-8: var(--component-font-size-8);
+  --text-font-size-9: var(--component-font-size-9);
+  --text-font-size-10: var(--component-font-size-10);
 }

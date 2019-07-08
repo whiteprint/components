@@ -1,5 +1,4 @@
-@import "../variables.css";
-
+/* Components: Bars */
 :root {
   --bar-bg-color: var(--component-main-color);
   --bar-text-color: var(--component-background-color);
