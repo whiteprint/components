@@ -77,7 +77,6 @@
   --button-focus-outline-offset: var(--component-focus-outline-offset);
   --button-focus-outline-opacity: var(--component-focus-outline-opacity);
   --button-focus-outline-blur: var(--component-focus-outline-blur);
-  --button-group-gap: var(--button-focus-outline-offset);
   --button-expand-max: var(--component-for-tablet-portrait);
   --button-emphasis-primary: var(--component-emphasis-primary);
   --button-shadow: none;
@@ -121,6 +120,12 @@
   --dropdown-link-active-focus-outline-color: var(--dropdown-bg-color);
   --dropdown-group-border-width: var(--component-border-width);
   --dropdown-group-border-color: var(--component-background-color);
+}
+/* Components: Groupss */
+:root {
+  --group-gap: 1rem;
+  --group-stack-at: var(--component-for-tablet-portrait);
+  --group-remove-inner-radius: false;
 }
 /* Components: Icon list */
 :root {

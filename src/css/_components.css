@@ -9,14 +9,16 @@
 @import "buttons/_button";
 @import "buttons/button.css";
 @import "buttons/button-primary.css";
-@import "buttons/_button-group";
-@import "buttons/button-group.css";
 
 @import "cards/_card";
 @import "cards/card.css";
 
 @import "dropdowns/_dropdown";
 @import "dropdowns/dropdown.css";
+
+@import "groups/_group";
+@import "groups/group.css";
+@import "groups/button-group.css";
 
 @import "icon-lists/_icon-list";
 @import "icon-lists/icon-list.css";

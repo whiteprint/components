@@ -1,0 +1,7 @@
+@mixin groupVariables
+/*  1. group gap ........... */ var(--group-gap),
+/*  2. stack contents at ... */ var(--group-stack-at),
+/*  3. remove inner radius . */ var(--group-remove-inner-radius);
+
+@mixin groupSelectors
+/*  1. group container ..... */ .group;

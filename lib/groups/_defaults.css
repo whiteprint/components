@@ -1,0 +1,6 @@
+/* Components: Groups */
+:root {
+  --group-gap: 1rem;
+  --group-stack-at: var(--component-for-tablet-portrait);
+  --group-remove-inner-radius: false;
+}

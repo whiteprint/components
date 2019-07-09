@@ -1,0 +1,7 @@
+@mixin groupVariables
+/*  1. group gap ........... */ var(--button-focus-outline-offset),
+/*  2. stack contents at ... */ var(--group-stack-at),
+/*  3. remove inner radius . */ true;
+
+@mixin groupSelectors
+/*  1. group container ..... */ .button-group;
