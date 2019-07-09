@@ -1,7 +1,0 @@
-@mixin buttonGroupVariables
-/*  1. border-radius ....... */ var(--button-border-radius),
-/*  2. group-gap ........... */ var(--button-group-gap),
-/*  3. expand-max .......... */ var(--button-expand-max);
-
-@mixin buttonGroupSelectors
-/*  1. button-group ........ */ .button-group;
