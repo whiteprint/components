@@ -1,6 +1,6 @@
 {
   "name": "@whiteprint/components",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Components for Whiteprint, CSS framework",
   "author": {
     "name": "Sam Smith",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "devDependencies": {
     "@whiteprint/base": "^0.1.1",
-    "@whiteprint/icons": "^0.1.1",
+    "@whiteprint/icons": "^0.1.6",
     "@whiteprint/placeholders": "^0.1.1",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",

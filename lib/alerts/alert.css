@@ -22,8 +22,9 @@
 /* 21. icon-width ........... */  var(--alert-icon-width),
 /* 22. icon-bg-color ........ */  var(--alert-icon-background-color),
 /* 23. icon-color ........... */  var(--alert-icon-color),
-/* 24. icon-padding-top ..... */  var(--alert-icon-padding-top),
-/* 25. box shadow ........... */  var(--alert-shadow);
+/* 24. icon-v-padding ....... */  var(--alert-icon-v-padding),
+/* 25. icon-h-padding ....... */  var(--alert-icon-h-padding),
+/* 26. box shadow ........... */  var(--alert-shadow);
 
 @mixin alertSelectors
 /*  1. alert ................ */  .alert,

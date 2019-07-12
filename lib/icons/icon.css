@@ -1,0 +1,7 @@
+@mixin iconVariables
+/*  1. icon width ........... */  var(--icon-width),
+/*  2. icon height .......... */  var(--icon-height),
+/*  3. icon fill color ...... */  var(--icon-fill);
+
+@mixin iconSelectors
+/*  1. icon ................. */  .icon;

@@ -20,6 +20,9 @@
 @import "groups/group.css";
 @import "groups/button-group.css";
 
+@import "icons/_icon";
+@import "icons/icon.css";
+
 @import "icon-lists/_icon-list";
 @import "icon-lists/icon-list.css";
 

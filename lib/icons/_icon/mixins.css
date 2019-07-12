@@ -1,0 +1,29 @@
+@define-mixin iconVariables
+  $width,
+  $height,
+  $fill: currentColor
+  {
+
+  $icon-width: $width;
+  $icon-height: $height;
+  $icon-fill: $fill;
+
+  @define-mixin iconIcon {
+    width: $icon-width;
+    height: $icon-height;
+    vertical-align: middle;
+  }
+
+}
+
+@define-mixin iconSelectors
+  $icon {
+
+  $icon_selector: $icon;
+
+
+  $icon_selector {
+    @mixin iconIcon;
+  }
+
+}

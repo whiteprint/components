@@ -5,7 +5,7 @@
 /*  4. icon gap ............. */  var(--icon-list-icon-gap),
 /*  5. icon fill ............ */  var(--icon-list-icon-fill),
 /*  6. icon offset x ........ */  -0.1rem,
-/*  7. icon offset y ........ */  -0.3rem;
+/*  7. icon offset y ........ */  -0.1rem;
 
 @mixin iconListSelectors
 /*  1. icon list............. */  .icon-list,

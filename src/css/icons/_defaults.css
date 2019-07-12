@@ -1,0 +1,6 @@
+/* Components: Icon */
+:root {
+  --icon-width: var(--component-icon-size);
+  --icon-height: var(--component-icon-size);
+  --icon-fill: var(--component-main-color);
+}

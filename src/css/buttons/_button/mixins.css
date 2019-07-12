@@ -125,8 +125,8 @@
 
   @define-mixin buttonIcon {
     fill: currentColor;
-    width: 1.8em;
-    height: 1.8em;
+    width: 2.5ex;
+    height: 2.5ex;
     position: relative;
   }
   @define-mixin buttonIconBeforeModifier {

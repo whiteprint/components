@@ -37,6 +37,8 @@
     font-family: $card-font-family;
     line-height: $card-line-height;
     box-shadow: $card-box-shadow;
+    display: flex;
+    flex-direction: column;
 
     & img {
       max-width: 100%;
@@ -60,6 +62,7 @@
   @define-mixin cardSection {
     padding-left: $card-gutter;
     padding-right: $card-gutter;
+    margin-bottom: $card-section-spacing;
 
     &:first-child {
       padding-top: $card-gutter;
@@ -67,6 +70,7 @@
 
     &:last-child {
       padding-bottom: $card-gutter;
+      margin-bottom: 0;
     }
 
     & > *:not(:first-child) {
@@ -74,14 +78,17 @@
     }
   }
 
-  @define-mixin cardSectionSibling {
-    margin-top: $card-section-spacing;
+  @define-mixin cardHeaderAfterFooter {
+    margin-top: calc(0 - calc($card-section-spacing + $card-inner-border-width));
   }
 
   @define-mixin cardFooter {
-    margin-top: $card-section-spacing;
+    margin-top: auto;
     border-top: solid $card-inner-border-width $card-border-color;
     padding: $card-footer-padding $card-gutter;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
 }
@@ -104,14 +111,14 @@
 
   $card_header-selector {
     @mixin cardHeader;
+
+    & + $card_footer-selector {
+      @mixin cardHeaderAfterFooter;
+    }
   }
 
   $card_section-selector {
     @mixin cardSection;
-
-    & + $card_section-selector {
-      @mixin cardSectionSibling;
-    }
   }
 
   $card_footer-selector {

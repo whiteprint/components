@@ -28,6 +28,7 @@
   --component-v-pad: 0.8rem;
   --component-h-pad: 1rem;
   --component-drop-shadow: 0px 0px 0px 4px #fff;
+  --component-icon-size: 2.5ex;
 }
 /* Components: Alerts */
 :root {
@@ -51,7 +52,7 @@
   --alert-long-message-font-size: var(--component-font-size-3);
   --alert-long-message-weight: var(--component-font-weight-normal);
   --alert-background-color: var(--component-background-color);
-  --alert-icon-width: 2.6em;
+  --alert-icon-width: var(--component-icon-size);
   --alert-icon-background-color: var(--component-border-color);
   --alert-icon-color: var(--component-background-color);
   --alert-icon-padding-top: 0.2em;
@@ -121,17 +122,23 @@
   --dropdown-group-border-width: var(--component-border-width);
   --dropdown-group-border-color: var(--component-background-color);
 }
-/* Components: Groupss */
+/* Components: Groups */
 :root {
   --group-gap: 1rem;
   --group-stack-at: var(--component-for-tablet-portrait);
   --group-remove-inner-radius: false;
 }
+/* Components: Icon */
+:root {
+  --icon-width: var(--component-size-size);
+  --icon-height: var(--component-size-size);
+  --icon-fill: var(--component-main-color);
+}
 /* Components: Icon list */
 :root {
-  --icon-list-item-spacing: 0.2rem;
-  --icon-list-icon-width: 1.8rem;
-  --icon-list-icon-height: 1.8rem;
+  --icon-list-item-spacing: 1em;
+  --icon-list-icon-width: var(--component-size-size);
+  --icon-list-icon-height: var(--component-size-size);
   --icon-list-icon-gap: 0.4em;
   --icon-list-icon-fill: var(--component-main-color);
 }
