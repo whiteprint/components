@@ -1,6 +1,6 @@
 /* Components: Icon list */
 :root {
-  --icon-list-item-spacing: 1em;
+  --icon-list-item-spacing: 0.6em;
   --icon-list-icon-width: var(--component-icon-size);
   --icon-list-icon-height: var(--component-icon-size);
   --icon-list-icon-gap: 0.4em;
