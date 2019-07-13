@@ -6,6 +6,9 @@
 @import "bars/_bar";
 @import "bars/top-bar.css";
 
+@import "banners/_banner";
+@import "banners/banner.css";
+
 @import "buttons/_button";
 @import "buttons/button.css";
 @import "buttons/button-primary.css";

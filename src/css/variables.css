@@ -1,5 +1,6 @@
 @import "_vars";
 @import "alerts/_defaults";
+@import "banners/_defaults";
 @import "bars/_defaults";
 @import "buttons/_defaults";
 @import "cards/_defaults";

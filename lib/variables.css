@@ -29,6 +29,8 @@
   --component-h-pad: 1rem;
   --component-drop-shadow: 0px 0px 0px 4px #fff;
   --component-icon-size: 2.5ex;
+  --component-max-width: 1170px;
+  --component-max-line-length: 75ch;
 }
 /* Components: Alerts */
 :root {
@@ -52,17 +54,38 @@
   --alert-long-message-font-size: var(--component-font-size-3);
   --alert-long-message-weight: var(--component-font-weight-normal);
   --alert-background-color: var(--component-background-color);
-  --alert-icon-width: var(--component-icon-size);
+  --alert-icon-width: 1.8em;
   --alert-icon-background-color: var(--component-border-color);
   --alert-icon-color: var(--component-background-color);
-  --alert-icon-padding-top: 0.2em;
+  --alert-icon-v-padding: 0.6em;
+  --alert-icon-h-padding: 0.6em;
   --alert-shadow: none;
+}
+/* Components: Banner */
+:root {
+  --banner-padding-top: 4rem;
+  --banner-padding-bottom: 2rem;
+  --banner-padding-left: 0;
+  --banner-padding-right: 0;
+  --banner-bg-color: var(--component-background-color);
+  --banner-heading-color: var(--component-main-color);
+  --banner-content-color: var(--component-main-color);
+  --banner-heading-font-size: var(--component-font-size-8);
+  --banner-content-font-size: var(--component-font-size-4);
+  --banner-content-line-height: 1.4;
+  --banner-border-color: var(--component-border-color);
+  --banner-border-top-width: var(--component-border-width);
+  --banner-border-bottom-width: var(--component-border-width);
+  --banner-border-left-width: 0;
+  --banner-border-right-width: 0;
+  --banner-max-width: var(--component-max-width);
 }
 /* Components: Bars */
 :root {
   --bar-bg-color: var(--component-main-color);
   --bar-text-color: var(--component-background-color);
   --bar-break-point: var(--component-for-tablet-portrait);
+  --bar-max-width: var(--component-max-width);
 }
 /* Components: Buttons */
 :root {
@@ -130,15 +153,15 @@
 }
 /* Components: Icon */
 :root {
-  --icon-width: var(--component-size-size);
-  --icon-height: var(--component-size-size);
-  --icon-fill: var(--component-main-color);
+  --icon-width: var(--component-icon-size);
+  --icon-height: var(--component-icon-size);
+  --icon-fill: currentColor;
 }
 /* Components: Icon list */
 :root {
-  --icon-list-item-spacing: 1em;
-  --icon-list-icon-width: var(--component-size-size);
-  --icon-list-icon-height: var(--component-size-size);
+  --icon-list-item-spacing: 0.6em;
+  --icon-list-icon-width: var(--component-icon-size);
+  --icon-list-icon-height: var(--component-icon-size);
   --icon-list-icon-gap: 0.4em;
   --icon-list-icon-fill: var(--component-main-color);
 }

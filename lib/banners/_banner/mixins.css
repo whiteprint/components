@@ -1,0 +1,105 @@
+@define-mixin bannerVariables
+  $space,
+  $t-padding,
+  $b-padding,
+  $l-padding,
+  $r-padding,
+  $bg-color,
+  $heading-color,
+  $content-color,
+  $heading-font-size,
+  $content-font-size,
+  $content-line-height,
+  $max-line-length,
+  $border-color,
+  $border-width-top,
+  $border-width-bottom,
+  $border-width-left,
+  $border-width-right,
+  $max-width: none {
+
+  $banner-space: $space;
+  $banner-t-padding: $t-padding;
+  $banner-b-padding: $b-padding;
+  $banner-l-padding: $l-padding;
+  $banner-r-padding: $r-padding;
+  $banner-bg-color: $bg-color;
+  $banner-heading-color: $heading-color;
+  $banner-content-color: $content-color;
+  $banner-heading-font-size: $heading-font-size;
+  $banner-content-font-size: $content-font-size;
+  $banner-content-line-height: $content-line-height;
+  $banner-max-line-length: $max-line-length;
+  $banner-border-color: $border-color;
+  $banner-border-width-top: $border-width-top;
+  $banner-border-width-bottom: $border-width-bottom;
+  $banner-border-width-left: $border-width-left;
+  $banner-border-width-right: $border-width-right;
+  $banner-max-width: $max-width;
+
+  @define-mixin bannerContainer {
+    padding: $banner-t-padding $banner-r-padding $banner-b-padding $banner-l-padding;
+    background-color: $banner-bg-color;
+    border-style: solid;
+    border-color: $banner-border-color;
+    border-width: $banner-border-width-top $banner-border-width-right $banner-border-width-bottom $banner-border-width-left;
+  }
+
+  @define-mixin bannerInner {
+    max-width: $banner-max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @define-mixin bannerHeading {
+    color: $banner-heading-color;
+    font-size: $banner-heading-font-size;
+    max-width: $banner-max-line-length;
+  }
+
+  @define-mixin bannerContent {
+    color: $banner-content-color;
+    font-size: $banner-content-font-size;
+    line-height: $banner-content-line-height;
+    max-width: $banner-max-line-length;
+  }
+
+  @define-mixin bannerContentSibling {
+    margin-top: $banner-space;
+  }
+}
+
+@define-mixin bannerSelectors
+  $selector: .banner,
+  $inner-selector: .banner_inner,
+  $heading-selector: .banner_heading,
+  $content-selector: .banner_content {
+
+  $banner-selector: $selector;
+  $banner_inner-selector: $inner-selector;
+  $banner_heading-selector: $heading-selector;
+  $banner_content-selector: $content-selector;
+
+  $banner-selector {
+    @mixin bannerContainer;
+  }
+
+  $banner_inner-selector {
+    @mixin bannerInner;
+  }
+
+  $banner_heading-selector {
+    @mixin bannerHeading;
+  }
+
+  $banner_content-selector {
+    @mixin bannerContent;
+  }
+
+  $banner_heading-selector,
+  $banner_content-selector {
+    & + $banner_content-selector {
+      @mixin bannerContentSibling;
+    }
+  }
+}

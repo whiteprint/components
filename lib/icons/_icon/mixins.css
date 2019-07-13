@@ -12,6 +12,7 @@
     width: $icon-width;
     height: $icon-height;
     vertical-align: middle;
+    fill: $icon-fill;
   }
 
 }
@@ -20,7 +21,6 @@
   $icon {
 
   $icon_selector: $icon;
-
 
   $icon_selector {
     @mixin iconIcon;

@@ -10,7 +10,7 @@
 /*  9. toggle color ........ */ white,
 /* 10. toggle border width . */ 0,
 /* 11. toggle border color . */ var(--bar-bg-color),
-/* 12. inner max width ..... */ 1170px,
+/* 12. inner max width ..... */ var(--bar-max-width),
 /* 13. break point ......... */ var(--bar-break-point);
 
 @mixin barSelectors
