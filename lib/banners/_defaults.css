@@ -2,12 +2,12 @@
 :root {
   --banner-padding-top: 5rem;
   --banner-padding-bottom: 3rem;
-  --banner-padding-left: 0;
-  --banner-padding-right: 0;
+  --banner-padding-left: 2rem;
+  --banner-padding-right: 2rem;
   --banner-bg-color: var(--component-background-color);
   --banner-heading-color: var(--component-main-color);
   --banner-content-color: var(--component-main-color);
-  --banner-heading-font-size: var(--component-font-size-8);
+  --banner-heading-font-size: var(--component-font-size-9);
   --banner-content-font-size: var(--component-font-size-4);
   --banner-content-line-height: 1.4;
   --banner-max-line-length: var(--component-max-line-length);

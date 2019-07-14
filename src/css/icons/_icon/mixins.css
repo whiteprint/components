@@ -11,7 +11,7 @@
   @define-mixin iconIcon {
     width: $icon-width;
     height: $icon-height;
-    vertical-align: middle;
+    vertical-align: sub;
     fill: $icon-fill;
   }
 

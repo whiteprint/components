@@ -1,7 +1,7 @@
 @mixin barVariables
 /*  1. bg colour ........... */ var(--bar-bg-color),
 /*  2. text colour ......... */ var(--bar-text-color),
-/*  3. h padding ........... */ 1rem,
+/*  3. h padding ........... */ 2rem,
 /*  4. v padding ........... */ 1rem,
 /*  5. toggle width ........ */ 2rem,
 /*  6. toggle height ....... */ 2rem,
