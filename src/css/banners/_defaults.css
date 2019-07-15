@@ -17,4 +17,5 @@
   --banner-border-left-width: 0;
   --banner-border-right-width: 0;
   --banner-max-width: var(--component-max-width);
+  --banner-v-offset: none;
 }

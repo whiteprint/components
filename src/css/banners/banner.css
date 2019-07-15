@@ -18,7 +18,8 @@
 /* 15. border width bottom .. */  var(--banner-border-bottom-width),
 /* 16. border width left .... */  var(--banner-border-left-width),
 /* 17. border width right ... */  var(--banner-border-right-width),
-/* 18. inner max width ...... */  var(--banner-max-width);
+/* 18. inner max width ...... */  var(--banner-max-width),
+/* 19. v offset ............. */  var(--banner-v-offset);
 
 @mixin bannerSelectors
 /*  1. container ............ */  .banner,

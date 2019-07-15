@@ -14,8 +14,8 @@
 /* 13. break point ......... */ var(--bar-break-point);
 
 @mixin barSelectors
-/*  1. container ........... */ .top-bar,
-/*  2. inner ............... */ .top-bar_inner,
-/*  3. logo ................ */ .top-bar_logo,
-/*  4. content ............. */ .top-bar_content,
-/*  5. toggle .............. */ .top-bar_toggle;
+/*  1. container ........... */ .nav-bar,
+/*  2. inner ............... */ .nav-bar_inner,
+/*  3. logo ................ */ .nav-bar_logo,
+/*  4. content ............. */ .nav-bar_content,
+/*  5. toggle .............. */ .nav-bar_toggle;

@@ -16,7 +16,8 @@
   $border-width-bottom,
   $border-width-left,
   $border-width-right,
-  $max-width: none {
+  $max-width: none,
+  $v-offset: none {
 
   $banner-space: $space;
   $banner-t-padding: $t-padding;
@@ -36,6 +37,7 @@
   $banner-border-width-left: $border-width-left;
   $banner-border-width-right: $border-width-right;
   $banner-max-width: $max-width;
+  $banner-v-offset: $v-offset;
 
   @define-mixin bannerContainer {
     padding: $banner-t-padding $banner-r-padding $banner-b-padding $banner-l-padding;
@@ -43,6 +45,10 @@
     border-style: solid;
     border-color: $banner-border-color;
     border-width: $banner-border-width-top $banner-border-width-right $banner-border-width-bottom $banner-border-width-left;
+
+    @if $banner-v-offset != none {
+      margin-top: $banner-v-offset;
+    }
   }
 
   @define-mixin bannerInner {
