@@ -39,6 +39,7 @@
     box-shadow: $card-box-shadow;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     & img {
       max-width: 100%;

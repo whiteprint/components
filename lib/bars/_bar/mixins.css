@@ -10,6 +10,7 @@
   $toggle-color,
   $toggle-border-width,
   $toggle-border-color,
+  $logo-height,
   $max-width: 100%,
   $break-point: 0px {
 
@@ -24,6 +25,7 @@
   $bar-toggle-color: $toggle-color;
   $bar-toggle-border-width: $toggle-border-width;
   $bar-toggle-border-color: $toggle-border-color;
+  $bar-logo-height: $logo-height;
   $bar-max-width: $max-width;
   $bar-break-point: $break-point;
 
@@ -45,6 +47,10 @@
   @define-mixin barLogo {
     color: inherit;
     text-decoration: none;
+  }
+
+  @define-mixin barLogoImg {
+    height: $bar-logo-height;
   }
 
   @define-mixin barContent {
@@ -99,6 +105,10 @@
 
   $bar-logo_selector {
     @mixin barLogo;
+
+    & img {
+      @mixin barLogoImg;
+    }
   }
 
   $bar-content_selector {

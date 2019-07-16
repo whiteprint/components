@@ -1,4 +1,7 @@
 /* Components: Navs */
 :root {
+  --nav-bg-color: var(--component-main-color);
+  --nav-link-bg: var(--component-main-color);
+  --nav-link-color: var(--component-background-color);
   --nav-break-point: var(--component-for-tablet-portrait);
 }

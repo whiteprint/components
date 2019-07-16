@@ -4,4 +4,5 @@
   --bar-text-color: var(--component-background-color);
   --bar-break-point: var(--component-for-tablet-portrait);
   --bar-max-width: var(--component-max-width);
+  --bar-logo-height: 1.5rem;
 }

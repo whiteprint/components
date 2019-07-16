@@ -88,6 +88,7 @@
   --bar-text-color: var(--component-background-color);
   --bar-break-point: var(--component-for-tablet-portrait);
   --bar-max-width: var(--component-max-width);
+  --bar-logo-height: 1.5rem;
 }
 /* Components: Buttons */
 :root {
@@ -177,6 +178,9 @@
 }
 /* Components: Navs */
 :root {
+  --nav-bg-color: var(--component-main-color);
+  --nav-link-bg: var(--component-main-color);
+  --nav-link-color: var(--component-background-color);
   --nav-break-point: var(--component-for-tablet-portrait);
 }
 /* Components: Text */

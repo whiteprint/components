@@ -1,7 +1,7 @@
 @mixin navVariables
-/*  1. bg color ............ */ var(--component-main-color),
-/*  2. link color .......... */ white,
-/*  3. link bg ............. */ var(--component-main-color),
+/*  1. bg color ............ */ var(--nav-bg-color),
+/*  2. link color .......... */ var(--nav-link-color),
+/*  3. link bg ............. */ var(--nav-link-bg),
 /*  4. link border width ... */ 0,
 /*  5. link border color ... */ var(--component-main-color),
 /*  3. link h padding ...... */ 1em,
