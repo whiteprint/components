@@ -47,10 +47,13 @@
   @define-mixin barLogo {
     color: inherit;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 
   @define-mixin barLogoImg {
     height: $bar-logo-height;
+    margin-right: 1ch;
   }
 
   @define-mixin barContent {
